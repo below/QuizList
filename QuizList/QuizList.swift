@@ -13,17 +13,21 @@ struct QuizListElement: Equatable, Codable {
     var text: String
 }
 
-struct QuizList : Collection, Encodable, Equatable {
+struct QuizList : Collection, Codable, Equatable {
     typealias Index = Int
     typealias Element = QuizListElement
 
-    private let itemList : [QuizListElement] = [
-        QuizListElement(number:  1, text: "Surprise"),
-        QuizListElement(number:  2, text: "Fear"),
-        QuizListElement(number:  3, text: "Ruthless efficiency"),
-        QuizListElement(number:  4, text: "Almost fanatical devotion to the Pope"),
-        QuizListElement(number:  5, text: "Nice red uniforms"),
-    ]
+    init() {
+        itemList =  [
+            QuizListElement(number:  1, text: "Surprise"),
+            QuizListElement(number:  2, text: "Fear"),
+            QuizListElement(number:  3, text: "Ruthless efficiency"),
+            QuizListElement(number:  4, text: "Almost fanatical devotion to the Pope"),
+            QuizListElement(number:  5, text: "Nice red uniforms"),
+        ]
+    }
+    
+    private let itemList: [QuizListElement]
     
     var startIndex: Int { return itemList.startIndex }
     var endIndex: Int { return itemList.endIndex }

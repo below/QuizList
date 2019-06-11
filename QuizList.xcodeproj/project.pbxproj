@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5622AF0BB90086FD75 /* VCTests.swift */; };
 		CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */; };
+		CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
+		CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */; };
 		CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23322ADAC40002B565F /* AppDelegate.swift */; };
 		CB64C23622ADAC40002B565F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23522ADAC40002B565F /* ViewController.swift */; };
 		CB64C23922ADAC40002B565F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23722ADAC40002B565F /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		CB4F8D5622AF0BB90086FD75 /* VCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTests.swift; sourceTree = "<group>"; };
 		CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrderTableViewController.swift; sourceTree = "<group>"; };
+		CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuizList.json; sourceTree = SOURCE_ROOT; };
+		CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CB64C23022ADAC40002B565F /* QuizList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB64C23322ADAC40002B565F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB64C23522ADAC40002B565F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,12 +89,14 @@
 			children = (
 				CB64C23322ADAC40002B565F /* AppDelegate.swift */,
 				CB64C23522ADAC40002B565F /* ViewController.swift */,
+				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
 				CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
 				CB64C23722ADAC40002B565F /* Main.storyboard */,
 				CB64C23A22ADAC41002B565F /* Assets.xcassets */,
 				CB64C23C22ADAC41002B565F /* LaunchScreen.storyboard */,
 				CB64C23F22ADAC41002B565F /* Info.plist */,
+				CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */,
 			);
 			path = QuizList;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			files = (
 				CB64C23E22ADAC41002B565F /* LaunchScreen.storyboard in Resources */,
 				CB64C23B22ADAC41002B565F /* Assets.xcassets in Resources */,
+				CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */,
 				CB64C23922ADAC40002B565F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +216,7 @@
 				CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */,
 				CB64C23622ADAC40002B565F /* ViewController.swift in Sources */,
 				CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */,
+				CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */,
 				CB64C25422ADAC55002B565F /* QuizList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

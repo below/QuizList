@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ListController {
 
     @IBOutlet weak var questionLabel: UILabel!
 
-    let list = QuizList()
+    var list: QuizList!
     var correctAnswerNumber = 0
     
     override func viewDidLoad() {
@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func setupQuiz () {
+        guard list != nil else {
+            return
+        }
         let questionNumber = randomIndex()
         let format = NSLocalizedString("Item #%d?", comment: "")
         questionLabel.text = String.init(format: format, questionNumber + 1)

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ListOrderTableViewController: UITableViewController {
-
-    let originalList = QuizList()
-    var list = [QuizListElement]()
+class ListOrderTableViewController: UITableViewController, ListController {
+    var list: QuizList!
+    
+    var quizList = [QuizListElement]()
     var showHints = false
     
     override func viewDidLoad() {
@@ -21,15 +21,15 @@ class ListOrderTableViewController: UITableViewController {
     }
 
     func allInPlace () -> Bool {
-        return list == originalList
+        return quizList == list
     }
     
     @IBAction func reshuffle () {
         var mutableList = [QuizListElement]()
-        for element in QuizList() {
+        for element in self.list {
             mutableList.append(element)
         }
-        self.list = mutableList.shuffled()
+        self.quizList = mutableList.shuffled()
         self.isEditing = true
         self.tableView.reloadData()
     }
@@ -41,19 +41,19 @@ class ListOrderTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return quizList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizListCell", for: indexPath)
 
-        let element = list[indexPath.row]
+        let element = quizList[indexPath.row]
         cell.textLabel?.text = element.text
         
         if showHints {
             let fontSize = cell.textLabel?.font.pointSize ?? 17
             var font: UIFont!
-            if element == originalList[indexPath.row] {
+            if element == list[indexPath.row] {
                 font = UIFont.boldSystemFont(ofSize: fontSize)
             } else {
                 font = UIFont.systemFont(ofSize: fontSize)
@@ -73,9 +73,9 @@ class ListOrderTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
-        let movedObject = self.list[fromIndexPath.row]
-        self.list.remove(at: fromIndexPath.row)
-        self.list.insert(movedObject, at: to.row)
+        let movedObject = self.quizList[fromIndexPath.row]
+        self.quizList.remove(at: fromIndexPath.row)
+        self.quizList.insert(movedObject, at: to.row)
         
         if allInPlace() {
             self.isEditing = false

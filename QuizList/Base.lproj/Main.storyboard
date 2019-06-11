@@ -12,7 +12,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="5TO-5S-cyu">
             <objects>
-                <tabBarController id="IXa-x7-bEh" sceneMemberID="viewController">
+                <tabBarController id="IXa-x7-bEh" customClass="TabBarController" customModule="QuizList" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sWT-UG-T6C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -144,7 +144,6 @@
         <!--Item-->
         <scene sceneID="5gg-QJ-IiI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ftL-zl-mFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="OEu-aO-A5t" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6RP-ie-h6N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oEx-2I-6fz">
@@ -155,6 +154,7 @@
                         <segue destination="kux-3H-lka" kind="relationship" relationship="rootViewController" id="wKS-7F-eac"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftL-zl-mFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-386" y="723"/>
         </scene>
