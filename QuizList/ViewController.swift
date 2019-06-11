@@ -16,6 +16,8 @@ class ViewController: UIViewController, ListController {
     var correctAnswerNumber = 0
     var questionNumber = 0
     var correctItems = [Int]()
+    var inOrder = false
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +28,31 @@ class ViewController: UIViewController, ListController {
         return Int.random(in: 0 ... list.count - 1)
     }
 
+    func nextQuestion () -> Int {
+        if inOrder {
+            defer {currentIndex = currentIndex + 1}
+            return currentIndex
+        }
+        else {
+            var newIndex: Int!
+            repeat {
+                newIndex = randomIndex()
+            } while correctItems.contains(questionNumber)
+            return newIndex
+        }
+    }
+    
     @IBAction func setupQuiz () {
         guard list != nil else {
             return
         }
         if correctItems.count == list.count {
             correctItems.removeAll()
+            currentIndex = 0
+            inOrder = !inOrder
         }
-        repeat {
-            questionNumber = randomIndex()
-        } while correctItems.contains(questionNumber)
+        
+        questionNumber = nextQuestion()
         
         let format = NSLocalizedString("Item #%d?", comment: "")
         questionLabel.text = String.init(format: format, questionNumber + 1)
@@ -80,7 +97,7 @@ class ViewController: UIViewController, ListController {
             button.tintColor = .red
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: { self.setupQuiz()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { self.setupQuiz()
         }
         )
     }

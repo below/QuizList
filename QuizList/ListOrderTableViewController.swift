@@ -76,7 +76,10 @@ class ListOrderTableViewController: UITableViewController, ListController {
         let movedObject = self.quizList[fromIndexPath.row]
         self.quizList.remove(at: fromIndexPath.row)
         self.quizList.insert(movedObject, at: to.row)
-        
+        if movedObject == self.list[to.row] {
+            let myCell = self.tableView(tableView, cellForRowAt: to)
+            myCell.textLabel?.textColor = UIColor.red
+        }
         if allInPlace() {
             self.isEditing = false
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reshuffle", style: .done, target: self, action: #selector(reshuffle))

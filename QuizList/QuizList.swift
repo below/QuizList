@@ -19,30 +19,28 @@ struct QuizList : Collection, Codable, Equatable {
 
     init() {
         itemList =  [
-            QuizListElement(number:  1, text: "Surprise"),
-            QuizListElement(number:  2, text: "Fear"),
-            QuizListElement(number:  3, text: "Ruthless efficiency"),
-            QuizListElement(number:  4, text: "Almost fanatical devotion to the Pope"),
-            QuizListElement(number:  5, text: "Nice red uniforms"),
+            Element(number:  1, text: "Surprise"),
+            Element(number:  2, text: "Fear"),
+            Element(number:  3, text: "Ruthless efficiency"),
+            Element(number:  4, text: "Almost fanatical devotion to the Pope"),
+            Element(number:  5, text: "Nice red uniforms"),
         ]
     }
     
-    private let itemList: [QuizListElement]
+    private let itemList: [Element]
     
     var startIndex: Int { return itemList.startIndex }
     var endIndex: Int { return itemList.endIndex }
     
-    subscript(position: Int) -> QuizListElement {
-        _read {
-            yield(itemList[position])
-        }
+    subscript(position: Int) -> Element {
+        return itemList[position]
     }
 
     func index(after i: Int) -> Int {
         return itemList.index(after: i)
     }
     
-    static func ==(lhs: [QuizListElement], rhs: QuizList) -> Bool {
+    static func ==(lhs: [Element], rhs: QuizList) -> Bool {
         return lhs == rhs.itemList
     }
 }
