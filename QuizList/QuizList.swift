@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct QuizListElement: Codable {
+struct QuizListElement: Equatable, Codable {
     var number: Int
     var text: String
 }
 
-struct QuizList : Collection, Encodable {
+struct QuizList : Collection, Encodable, Equatable {
     typealias Index = Int
     typealias Element = QuizListElement
 
@@ -36,5 +36,9 @@ struct QuizList : Collection, Encodable {
 
     func index(after i: Int) -> Int {
         return itemList.index(after: i)
+    }
+    
+    static func ==(lhs: [QuizListElement], rhs: QuizList) -> Bool {
+        return lhs == rhs.itemList
     }
 }
