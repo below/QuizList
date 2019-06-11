@@ -19,6 +19,7 @@
 		CB64C23E22ADAC41002B565F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23C22ADAC41002B565F /* LaunchScreen.storyboard */; };
 		CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C24822ADAC42002B565F /* QuizListTests.swift */; };
 		CB64C25422ADAC55002B565F /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
+		CB6D719D22B04168004D7402 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
 		CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */; };
@@ -358,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6D719D22B04168004D7402 /* QuizList.json in Resources */,
 				CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

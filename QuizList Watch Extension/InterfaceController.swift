@@ -14,13 +14,27 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
     
-    var list = QuizList()
+    var list: QuizList!
     var quizFactory: QuestionManufactory!
     var questionNumber: Int!
     var correctAnswerNumber: Int!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        do {
+            if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
+                
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                list = try decoder.decode(QuizList.self, from: data)
+            }
+        }
+        catch {
+        }
+        if list == nil {
+            list = QuizList()
+        }
+
         quizFactory = QuestionManufactory(list: list)
         setupQuiz()
     }
