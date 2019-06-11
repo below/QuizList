@@ -14,6 +14,8 @@ class ViewController: UIViewController, ListController {
 
     var list: QuizList!
     var correctAnswerNumber = 0
+    var questionNumber = 0
+    var correctItems = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,13 @@ class ViewController: UIViewController, ListController {
         guard list != nil else {
             return
         }
-        let questionNumber = randomIndex()
+        if correctItems.count == list.count {
+            correctItems.removeAll()
+        }
+        repeat {
+            questionNumber = randomIndex()
+        } while correctItems.contains(questionNumber)
+        
         let format = NSLocalizedString("Item #%d?", comment: "")
         questionLabel.text = String.init(format: format, questionNumber + 1)
         
@@ -64,7 +72,7 @@ class ViewController: UIViewController, ListController {
 
     @IBAction func attemptAnswer(_ sender: UIButton) {
         if correctAnswerNumber == sender.tag {
-            // TODO
+            correctItems.append(questionNumber)
         } else {
             guard let button = view.viewWithTag(correctAnswerNumber) as? UIButton else {
                 return
