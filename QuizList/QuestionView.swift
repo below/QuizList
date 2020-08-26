@@ -57,7 +57,9 @@ struct QuestionView: View {
                 }).frame(maxWidth: .infinity)
 
             }
-        }.font(.system(size: 32)).multilineTextAlignment(.center)
+        }
+        .font(.system(size: 32))
+        .multilineTextAlignment(.center)
     }
 }
 
