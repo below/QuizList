@@ -43,7 +43,7 @@ struct QuestionView: View {
             ForEach(0..<answerSet.answers.count) { i in
                 Button(action: {
                     if i == answerSet.correctAnswer {
-                        quizFactory.appendCorrectAnswer(i)
+                        quizFactory.appendCorrectAnswer(self.item)
                         self.item = self.quizFactory.nextQuestion()
                     } else {
                         self.showCorrectAnswer = answerSet.correctAnswer
