@@ -63,7 +63,15 @@ struct QuestionView: View {
     }
 }
 
-class QuestionViewHostingController: UIHostingController<QuestionView> {
+class QuestionViewHostingController: UIHostingController<QuestionView>, ListController {
+    let questionView = QuestionView(list: QuizList())
+
+    var list: QuizList! {
+        didSet {
+            self.rootView = QuestionView(list: list)
+        }
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder, rootView: QuestionView(list: QuizList()))
     }
