@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXa-x7-bEh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXa-x7-bEh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,89 +19,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JRh-eF-N31"/>
                         <segue destination="OEu-aO-A5t" kind="relationship" relationship="viewControllers" id="cGI-3m-Alb"/>
                         <segue destination="KRl-f0-Udd" kind="relationship" relationship="viewControllers" id="k6x-Cc-CZX"/>
+                        <segue destination="oG7-Iv-haJ" kind="relationship" relationship="viewControllers" id="qMs-uj-xfI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1o-rI-Fqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1090" y="-5"/>
-        </scene>
-        <!--Quiz-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizList" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="QB8-4w-pbv">
-                                <rect key="frame" x="20" y="281.5" width="374" height="333"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-dh-tHe">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="jNP-Ub-nXN">
-                                        <rect key="frame" x="0.0" y="73" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="attemptAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scL-3C-Kmo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-W6-gC0">
-                                        <rect key="frame" x="0.0" y="146" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="attemptAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drM-Iq-aGU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-2l-Kth">
-                                        <rect key="frame" x="0.0" y="219" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="attemptAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0n-PK-6wH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pC3-0B-aUC">
-                                        <rect key="frame" x="0.0" y="292" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="attemptAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxi-8b-KE3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="sqi-2l-Kth" firstAttribute="height" secondItem="FFN-dh-tHe" secondAttribute="height" id="E91-b5-Tow"/>
-                                    <constraint firstItem="jNP-Ub-nXN" firstAttribute="height" secondItem="FFN-dh-tHe" secondAttribute="height" id="GZ5-w9-Fu3"/>
-                                    <constraint firstItem="f1M-W6-gC0" firstAttribute="height" secondItem="FFN-dh-tHe" secondAttribute="height" id="QQ7-5y-SLv"/>
-                                    <constraint firstItem="pC3-0B-aUC" firstAttribute="height" secondItem="FFN-dh-tHe" secondAttribute="height" id="gBt-rq-ZJ9"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="QB8-4w-pbv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Aok-uF-d05"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QB8-4w-pbv" secondAttribute="trailing" constant="20" id="LQA-Sk-I13"/>
-                            <constraint firstItem="QB8-4w-pbv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fAf-Ou-IQv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Quiz" id="3Ot-GJ-4A1"/>
-                    <connections>
-                        <outlet property="questionLabel" destination="FFN-dh-tHe" id="z1R-TC-nEh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1091" y="723"/>
         </scene>
         <!--List-->
         <scene sceneID="7ev-3P-Ruy">
@@ -134,7 +60,7 @@
                             <outlet property="delegate" destination="kux-3H-lka" id="HDH-jC-kDe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="List" id="kcJ-pC-rQQ"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list.number" catalog="system" id="kcJ-pC-rQQ"/>
                     <navigationItem key="navigationItem" id="3c6-Tg-ydT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LX9-n8-V9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,18 +83,18 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dQ6-da-KMH">
                                 <rect key="frame" x="20" y="211" width="374" height="128"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="yST-jm-8RF"/>
                                 </constraints>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="KRl-f0-Udd" id="bzy-Pp-aUo"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-bA-2Pe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-bA-2Pe">
                                 <rect key="frame" x="183.5" y="347" width="47" height="30"/>
                                 <state key="normal" title="Try Me"/>
                                 <connections>
@@ -177,17 +103,18 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FnK-rB-Udp">
                                 <rect key="frame" x="20" y="385" width="374" height="128"/>
-                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="dAM-Zh-Il2"/>
                                     <constraint firstAttribute="height" constant="128" id="yJM-Om-nLd"/>
                                 </constraints>
-                                <color key="textColor" xcode11CocoaTouchSystemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W5u-LB-eLW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="W5u-LB-eLW" firstAttribute="trailing" secondItem="dQ6-da-KMH" secondAttribute="trailing" constant="20" id="4nR-Dv-ZY0"/>
                             <constraint firstItem="W5u-LB-eLW" firstAttribute="trailing" secondItem="FnK-rB-Udp" secondAttribute="trailing" constant="20" id="Jad-pb-9Kd"/>
@@ -201,9 +128,8 @@
                             <constraint firstItem="ce7-bA-2Pe" firstAttribute="top" secondItem="dQ6-da-KMH" secondAttribute="bottom" constant="8" id="qJ7-VN-XYm"/>
                             <constraint firstItem="7zx-z8-G3A" firstAttribute="top" secondItem="W5u-LB-eLW" secondAttribute="top" constant="100" id="t8f-AZ-R0D"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="W5u-LB-eLW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Write" id="faY-6e-7EW"/>
+                    <tabBarItem key="tabBarItem" title="Write" image="pencil.circle" catalog="system" id="faY-6e-7EW"/>
                     <connections>
                         <outlet property="answerField" destination="FnK-rB-Udp" id="4gV-if-lqJ"/>
                         <outlet property="button" destination="ce7-bA-2Pe" id="S5P-Y1-HjS"/>
@@ -214,6 +140,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCJ-IR-1Eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.7101449275362" y="722.54464285714278"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="qiq-XO-3TS">
+            <objects>
+                <hostingController title="Quiz" id="oG7-Iv-haJ" customClass="QuestionViewHostingController" customModule="QuizList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quiz" image="questionmark.circle" catalog="system" id="BgR-Ar-WqR"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DmG-FF-XNt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1093" y="737"/>
         </scene>
         <!--Item-->
         <scene sceneID="5gg-QJ-IiI">
@@ -233,4 +169,15 @@
             <point key="canvasLocation" x="-386" y="723"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.number" catalog="system" width="128" height="97"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
