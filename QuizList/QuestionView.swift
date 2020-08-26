@@ -19,8 +19,8 @@ extension Text {
 }
 
 struct QuestionView: View {
-    var list: QuizList
-    var quizFactory: QuestionManufactory
+    private var list: QuizList
+    private var quizFactory: QuestionManufactory
     @State var item = 0
     @State var showCorrectAnswer: Int?
 
