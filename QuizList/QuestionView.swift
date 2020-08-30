@@ -8,16 +8,6 @@
 
 import SwiftUI
 
-extension Text {
-    public func highlight(_ highlight: Bool) -> some View {
-        if highlight {
-            return self.foregroundColor(.red)
-        } else {
-            return self
-        }
-    }
-}
-
 struct QuestionView: View {
     private var list: QuizList
     private var quizFactory: QuestionManufactory
@@ -37,7 +27,7 @@ struct QuestionView: View {
     var body: some View {
         VStack(spacing: 10) {
             Text("Item # \(list[item].number)").bold()
-
+            Spacer()
             let answerSet = try! self.quizFactory.answers(question: self.item, number: 4)
 
             ForEach(0..<answerSet.answers.count) { i in
@@ -53,12 +43,18 @@ struct QuestionView: View {
                         }
                     }
                 }, label: {
-                    Text(answerSet.answers[i]).highlight(i == showCorrectAnswer)
+                    let text = Text(answerSet.answers[i])
+                    if i == showCorrectAnswer {
+                        text.foregroundColor(.red)
+                    } else {
+                        text
+                    }
                 }).frame(maxWidth: .infinity)
 
             }
+            Spacer()
         }
-        .font(.system(size: 32))
+        .font(.system(.title))
         .multilineTextAlignment(.center)
     }
 }
