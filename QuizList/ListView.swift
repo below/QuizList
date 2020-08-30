@@ -41,7 +41,13 @@ struct ListView: View {
         var body: some View {
             List {
                 ForEach (0..<quizList.count) { i in
-                    Text(quizList[i].text)
+                    let item = quizList[i]
+                    let text = Text(item.text)
+                    if i+1 == item.number {
+                        text
+                    } else {
+                        text
+                    }
                 }
                 .onMove(perform: action)
             }
