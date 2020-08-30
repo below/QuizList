@@ -14,7 +14,7 @@ struct ListView: View {
     @State var editMode: EditMode = .active
     @State var showShuffleButton = false
 
-    internal func shuffle () -> [QuizListElement]{
+    internal func shuffledList () -> [QuizListElement]{
         var mutableList = [QuizListElement]()
         for element in self.list {
             mutableList.append(element)
@@ -22,10 +22,15 @@ struct ListView: View {
         return mutableList.shuffled()
     }
 
+    func reshuffle() {
+        quizList = shuffledList()
+        self.editMode = .active
+    }
+
     init(list: QuizList) {
         self.list = list
 
-        _quizList = State(initialValue: shuffle())
+        _quizList = State(initialValue: shuffledList())
     }
 
     struct MyList: View {
@@ -46,15 +51,15 @@ struct ListView: View {
 
     var body: some View {
         NavigationView {
+            let myList = MyList(quizList: quizList, action: move, editMode: $editMode)
             if (showShuffleButton) {
-                MyList(quizList: quizList, action: move, editMode: $editMode)
-                    .navigationBarItems(trailing:
-                                            Button("foo", action: {
-                                                debugPrint("Faz")
+                myList.navigationBarItems(trailing:
+                                            Button("Reshuffle", action: {
+                                                reshuffle()
                                             })
                     )
             } else {
-                MyList(quizList: quizList, action: move, editMode: $editMode)
+                myList
             }
         }
     }
