@@ -10,7 +10,6 @@
 		CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1BF4D422B1997D0052D058 /* WriteController.swift */; };
 		CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5622AF0BB90086FD75 /* VCTests.swift */; };
-		CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */; };
 		CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
 		CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */; };
 		CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23322ADAC40002B565F /* AppDelegate.swift */; };
@@ -86,7 +85,6 @@
 /* Begin PBXFileReference section */
 		CB1BF4D422B1997D0052D058 /* WriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
 		CB4F8D5622AF0BB90086FD75 /* VCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTests.swift; sourceTree = "<group>"; };
-		CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrderTableViewController.swift; sourceTree = "<group>"; };
 		CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuizList.json; sourceTree = SOURCE_ROOT; };
 		CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CB64C23022ADAC40002B565F /* QuizList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +165,6 @@
 				CB64C23322ADAC40002B565F /* AppDelegate.swift */,
 				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
 				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
-				CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */,
 				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
 				CB1BF4D422B1997D0052D058 /* WriteController.swift */,
@@ -380,7 +377,6 @@
 				CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */,
 				CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */,
 				CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */,
-				CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */,
 				CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
 				CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */,
 				CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */,
