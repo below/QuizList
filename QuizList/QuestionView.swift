@@ -12,7 +12,8 @@ struct QuestionView: View {
     private var list: QuizList
     private var quizFactory: QuestionManufactory
     @State var item = 0
-    @State var showCorrectAnswer: Int?
+    @State var showCorrectAnswer: Bool = false
+    @State var answerSet: QuestionManufactory.Answers!
 
     init(list: QuizList, item: Int? = nil) {
         self.list = list
@@ -22,29 +23,40 @@ struct QuestionView: View {
         } else {
             self.item = quizFactory.nextQuestion()
         }
+        do {
+            let set = try self.quizFactory.answers(question: self.item, number: 4)
+            _answerSet = State(initialValue: set)
+        } catch {
+            debugPrint("Unable to create answer set")
+        }
+    }
+
+    func nextQuestion() {
+        self.showCorrectAnswer = false
+        self.item = self.quizFactory.nextQuestion()
+        self.answerSet = try! quizFactory.answers(question: self.item, number: 4)
     }
 
     var body: some View {
         VStack(spacing: 10) {
             Text("Item # \(list[item].number)").bold()
             Spacer()
-            let answerSet = try! self.quizFactory.answers(question: self.item, number: 4)
 
             ForEach(0..<answerSet.answers.count) { i in
                 Button(action: {
                     if i == answerSet.correctAnswer {
                         quizFactory.appendCorrectAnswer(self.item)
-                        self.item = self.quizFactory.nextQuestion()
+                        self.nextQuestion()
                     } else {
-                        self.showCorrectAnswer = answerSet.correctAnswer
+                        self.showCorrectAnswer = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.showCorrectAnswer = nil
-                            self.item = self.quizFactory.nextQuestion()
+                            self.nextQuestion()
                         }
                     }
                 }, label: {
                     let text = Text(answerSet.answers[i])
-                    if i == showCorrectAnswer {
+
+                    if showCorrectAnswer, i == answerSet.correctAnswer {
                         text.foregroundColor(.red)
                     } else {
                         text
