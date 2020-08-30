@@ -88,7 +88,7 @@ class ListViewHostingController: UIHostingController<ListView>, ListController {
 
     var list: QuizList! {
         didSet {
-//            self.rootView = ListView(list: list)
+            self.rootView = ListView(list: list)
         }
     }
 
