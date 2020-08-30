@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1BF4D422B1997D0052D058 /* WriteController.swift */; };
-		CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5622AF0BB90086FD75 /* VCTests.swift */; };
 		CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
 		CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */; };
 		CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23322ADAC40002B565F /* AppDelegate.swift */; };
@@ -84,7 +83,6 @@
 
 /* Begin PBXFileReference section */
 		CB1BF4D422B1997D0052D058 /* WriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
-		CB4F8D5622AF0BB90086FD75 /* VCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTests.swift; sourceTree = "<group>"; };
 		CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuizList.json; sourceTree = SOURCE_ROOT; };
 		CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CB64C23022ADAC40002B565F /* QuizList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				CB64C24822ADAC42002B565F /* QuizListTests.swift */,
-				CB4F8D5622AF0BB90086FD75 /* VCTests.swift */,
 				CB64C24A22ADAC42002B565F /* Info.plist */,
 			);
 			path = QuizListTests;
@@ -388,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */,
 				CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
