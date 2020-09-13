@@ -60,20 +60,21 @@ class QuestionManufactory {
         }
         
         let range = 0 ..< number
-        var usedAnswers = [question]
+        var usedAnswers = [list[question]]
         let correctAnswerNumber = Int.random(in: range)
         var resultAnswers = [String]()
         for i in range {
             var answerNumber: Int!
+            var answer: QuizListElement!
             if i == correctAnswerNumber {
-                answerNumber = question
+                answer = list[question]
             } else {
                 repeat {
                     answerNumber = randomIndex()
-                } while usedAnswers.contains(answerNumber)
-                usedAnswers.append(answerNumber)
+                    answer = list[answerNumber]
+                } while usedAnswers.contains(answer)
+                usedAnswers.append(answer)
             }
-            let answer = list[answerNumber]
             resultAnswers.append(answer.text)
         }
         return (correctAnswerNumber, resultAnswers)
