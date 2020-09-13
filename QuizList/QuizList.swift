@@ -11,6 +11,11 @@ import Foundation
 struct QuizListElement: Equatable, Codable {
     var number: Int
     var text: String
+
+    static func ==(lhs: QuizListElement, rhs: QuizListElement) -> Bool {
+        return lhs.text == rhs.text
+    }
+
 }
 
 struct QuizList : Collection, Codable, Equatable {
