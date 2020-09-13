@@ -43,8 +43,14 @@ struct QuestionView: View {
             Spacer()
 
             ForEach(0..<answerSet.answers.count) { i in
+                let answerText = answerSet.answers[i]
                 Button(action: {
-                    if i == answerSet.correctAnswer {
+                    // Don't like this …
+                    // The idea is that there may be more than one
+                    // item with the same text
+
+                    // Update: There should be only one correct answer
+                    if i == answerSet.correctAnswer || answerText == answerSet.answers[answerSet.correctAnswer] {
                         quizFactory.appendCorrectAnswer(self.item)
                         self.nextQuestion()
                     } else {
@@ -54,7 +60,7 @@ struct QuestionView: View {
                         }
                     }
                 }, label: {
-                    let text = Text(answerSet.answers[i])
+                    let text = Text(answerText)
 
                     if showCorrectAnswer, i == answerSet.correctAnswer {
                         text.foregroundColor(.red)
