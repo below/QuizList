@@ -22,6 +22,7 @@
                         <segue destination="oG7-Iv-haJ" kind="relationship" relationship="viewControllers" id="qMs-uj-xfI"/>
                         <segue destination="QjS-TN-XOP" kind="relationship" relationship="viewControllers" id="ttJ-uS-kS1"/>
                         <segue destination="KRl-f0-Udd" kind="relationship" relationship="viewControllers" id="k6x-Cc-CZX"/>
+                        <segue destination="EKR-ao-JY0" kind="relationship" relationship="viewControllers" id="gfE-g9-abY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1o-rI-Fqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="-304" y="735"/>
         </scene>
-        <!--Write-->
+        <!--UIWrite-->
         <scene sceneID="1eQ-0m-gDb">
             <objects>
                 <viewController id="KRl-f0-Udd" customClass="WriteController" customModule="QuizList" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,7 +101,7 @@
                             <constraint firstItem="7zx-z8-G3A" firstAttribute="top" secondItem="W5u-LB-eLW" secondAttribute="top" constant="100" id="t8f-AZ-R0D"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Write" image="pencil.circle" catalog="system" id="faY-6e-7EW"/>
+                    <tabBarItem key="tabBarItem" title="UIWrite" image="pencil.slash" catalog="system" id="faY-6e-7EW"/>
                     <connections>
                         <outlet property="answerField" destination="FnK-rB-Udp" id="4gV-if-lqJ"/>
                         <outlet property="button" destination="ce7-bA-2Pe" id="S5P-Y1-HjS"/>
@@ -111,6 +112,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCJ-IR-1Eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445" y="727"/>
+        </scene>
+        <!--Write-->
+        <scene sceneID="Czn-OW-87t">
+            <objects>
+                <hostingController id="EKR-ao-JY0" customClass="WriteViewHostingController" customModule="QuizList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Write" image="pencil.circle" catalog="system" id="Z2j-mu-Wf0"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrW-LK-hFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1267" y="725"/>
         </scene>
         <!--Quiz-->
         <scene sceneID="qiq-XO-3TS">
@@ -126,6 +137,7 @@
     <resources>
         <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.slash" catalog="system" width="128" height="113"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

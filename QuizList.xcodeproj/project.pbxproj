@@ -18,6 +18,7 @@
 		CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C24822ADAC42002B565F /* QuizListTests.swift */; };
 		CB64C25422ADAC55002B565F /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB6D719D22B04168004D7402 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
+		CB6E7DFD24FC371C007B03CF /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E7DFC24FC371C007B03CF /* WriteView.swift */; };
 		CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
@@ -95,6 +96,7 @@
 		CB64C24822ADAC42002B565F /* QuizListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListTests.swift; sourceTree = "<group>"; };
 		CB64C24A22ADAC42002B565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB64C25322ADAC55002B565F /* QuizList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizList.swift; sourceTree = "<group>"; };
+		CB6E7DFC24FC371C007B03CF /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManufactory.swift; sourceTree = "<group>"; };
 		CB87B76724F68E52004BA9F9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CB87B76B24F717A2004BA9F9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
 				CB1BF4D422B1997D0052D058 /* WriteController.swift */,
+				CB6E7DFC24FC371C007B03CF /* WriteView.swift */,
 				CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */,
 				CB64C23722ADAC40002B565F /* Main.storyboard */,
 				CB64C23A22ADAC41002B565F /* Assets.xcassets */,
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6E7DFD24FC371C007B03CF /* WriteView.swift in Sources */,
 				CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */,
 				CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */,
 				CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */,
