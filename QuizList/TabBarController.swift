@@ -18,16 +18,18 @@ class TabBarController: UITabBarController, ListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
-                
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                list = try decoder.decode(QuizList.self, from: data)
+
+        if false {
+            do {
+                if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
+
+                    let data = try Data(contentsOf: url)
+                    let decoder = JSONDecoder()
+                    list = try decoder.decode(QuizList.self, from: data)
+                }
             }
-        }
-        catch {
+            catch {
+            }
         }
         if list == nil {
             list = QuizList()

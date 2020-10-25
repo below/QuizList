@@ -9,15 +9,6 @@
 import UIKit
 import QuartzCore
 
-extension String {
-    var sanitized : String {
-        get {
-            let charset = CharacterSet.alphanumerics.inverted
-            return self.components(separatedBy: charset).joined()
-        }
-    }
-}
-
 class WriteController: UIViewController, ListController, UITextViewDelegate {
     var list: QuizList!
     var quizFactory: QuestionManufactory!
