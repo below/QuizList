@@ -70,7 +70,6 @@ struct WriteView: View {
             } onCommit: {
                 checkAnswer()
             }.multilineTextAlignment(.center)
-
             Button("Try Me") {
                 checkAnswer()
             }.padding()

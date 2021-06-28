@@ -44,7 +44,7 @@ struct ListView: View {
                     let item = quizList[i]
                     let text = Text(item.text)
                     if i+1 == item.number {
-                        text
+                        text.bold()
                     } else {
                         text
                     }

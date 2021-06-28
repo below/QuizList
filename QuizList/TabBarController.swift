@@ -19,7 +19,7 @@ class TabBarController: UITabBarController, ListController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if false {
+        if true {
             do {
                 if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
 
