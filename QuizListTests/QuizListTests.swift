@@ -21,18 +21,18 @@ class QuizListTests: XCTestCase {
     }
 
     func testCount() {
-        XCTAssertEqual(newList.count, 5)
+        XCTAssertEqual(newList.items.count, 5)
     }
 
     func testFirst() {
-        XCTAssertEqual(newList[0].text, "Surprise")
+        XCTAssertEqual(newList.items[0].text, "Surprise")
     }
     
     func testItem1 () {
-        XCTAssertEqual(newList[1].text, "Fear")
+        XCTAssertEqual(newList.items[1].text, "Fear")
     }
     func testLastItem() {
-        let foo = newList[newList.count - 1].text
+        let foo = newList.items[newList.items.count - 1].text
         XCTAssertEqual(foo, "Nice red uniforms")
     }
 }

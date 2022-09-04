@@ -49,7 +49,7 @@ struct WriteView: View {
     }
 
     func checkAnswer() {
-        if answer.sanitized == list[currentQuestion].text.sanitized {
+        if answer.sanitized == list.items[currentQuestion].text.sanitized {
             showAnswer = .correct
             quizFactory.appendCorrectAnswer(currentQuestion)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -73,7 +73,7 @@ struct WriteView: View {
             Button("Try Me") {
                 checkAnswer()
             }.padding()
-            CorrectAnswerView(answerState: showAnswer, text: list[currentQuestion].text)
+            CorrectAnswerView(answerState: showAnswer, text: list.items[currentQuestion].text)
             Spacer()
         }
     }

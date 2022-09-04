@@ -16,7 +16,7 @@ struct ListView: View {
 
     internal func shuffledList () -> [QuizListElement]{
         var mutableList = [QuizListElement]()
-        for element in self.list {
+        for element in self.list.items {
             mutableList.append(element)
         }
         return mutableList.shuffled()
@@ -40,7 +40,7 @@ struct ListView: View {
 
         var body: some View {
             List {
-                ForEach (0..<quizList.count) { i in
+                ForEach (0..<quizList.count, id: \.self) { i in
                     let item = quizList[i]
                     let text = Text(item.text)
                     if i+1 == item.number {
@@ -71,7 +71,7 @@ struct ListView: View {
     }
 
     var allInPlace: Bool {
-        return quizList == list
+        return quizList == list.items
     }
 
     func move(from indices: IndexSet, to newOffset: Int) {
@@ -83,6 +83,7 @@ struct ListView: View {
     }
 }
 
+#if os(iOS)
 class ListViewHostingController: UIHostingController<ListView>, ListController {
     let questionView = QuestionView(list: QuizList())
 
@@ -96,6 +97,7 @@ class ListViewHostingController: UIHostingController<ListView>, ListController {
         super.init(coder: aDecoder, rootView: ListView(list: QuizList()))
     }
 }
+#endif
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {

@@ -21,14 +21,22 @@ class TabBarController: UITabBarController, ListController {
 
         if true {
             do {
-                if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
-
-                    let data = try Data(contentsOf: url)
+                let bundles = Bundle.main.urls(
+                    forResourcesWithExtension: "bundle",
+                    subdirectory: nil)
+                if let dataBundleUrl = bundles?.first,
+                    let dataBundle = Bundle(url: dataBundleUrl),
+                                            let dataFileUrl = dataBundle.url(
+                                                forResource: "data",
+                                                withExtension: "json") {
+                    let data = try Data(contentsOf: dataFileUrl)
                     let decoder = JSONDecoder()
                     list = try decoder.decode(QuizList.self, from: data)
+
                 }
             }
-            catch {
+            catch let error {
+                NSLog("\(error.localizedDescription)")
             }
         }
         if list == nil {

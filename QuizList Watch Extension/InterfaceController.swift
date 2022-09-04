@@ -69,7 +69,7 @@ class InterfaceController: WKInterfaceController {
         if rowIndex == correctAnswerNumber {
             if let controller = self.table.rowController(at: rowIndex) as? QuizRowType {
                 
-                let text = list[questionNumber].text
+                let text = list.items[questionNumber].text
                 let font = UIFont.preferredFont(forTextStyle: .headline)
                 
                 let attrStr = NSAttributedString(string: text, attributes: [NSAttributedString.Key.font: font])

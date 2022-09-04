@@ -17,7 +17,9 @@ struct QuestionView: View {
 
     init(list: QuizList, item: Int? = nil) {
         self.list = list
-        self.quizFactory = QuestionManufactory(list: list)
+        self.quizFactory = QuestionManufactory(list: list) {
+            NSLog("We hit all correct!")
+        }
         if let item = item {
             self.item = item
         } else {
@@ -39,10 +41,10 @@ struct QuestionView: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            Text("Item # \(list[item].number)").bold()
+            Text("Item # \(list.items[item].number)").bold()
             Spacer()
 
-            ForEach(0..<answerSet.answers.count) { i in
+            ForEach(0..<answerSet.answers.count, id: \.self) { i in
                 let answerText = answerSet.answers[i]
                 Button(action: {
                     // Don't like this …
@@ -61,6 +63,7 @@ struct QuestionView: View {
                     }
                 }, label: {
                     let text = Text(answerText)
+                        .padding()
 
                     if showCorrectAnswer, i == answerSet.correctAnswer {
                         text.foregroundColor(.red)
@@ -77,6 +80,7 @@ struct QuestionView: View {
     }
 }
 
+#if os(iOS)
 class QuestionViewHostingController: UIHostingController<QuestionView>, ListController {
     let questionView = QuestionView(list: QuizList())
 
@@ -90,6 +94,7 @@ class QuestionViewHostingController: UIHostingController<QuestionView>, ListCont
         super.init(coder: aDecoder, rootView: QuestionView(list: QuizList()))
     }
 }
+#endif
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {

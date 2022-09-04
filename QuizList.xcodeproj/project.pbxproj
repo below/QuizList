@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB139D4928C5545F00D968B8 /* BundleReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */; };
+		CB139D4B28C554BB00D968B8 /* Data.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB139D4A28C554BB00D968B8 /* Data.bundle */; };
 		CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
 		CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */; };
+		CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
 		CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23322ADAC40002B565F /* AppDelegate.swift */; };
 		CB64C23922ADAC40002B565F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23722ADAC40002B565F /* Main.storyboard */; };
 		CB64C23B22ADAC41002B565F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23A22ADAC41002B565F /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
 		CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76B24F717A2004BA9F9 /* ListView.swift */; };
+		CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B626A9AA7A00A964E6 /* WatchView.swift */; };
+		CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */; };
+		CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 		CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */; };
 		CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */; };
 		CB9B5C6722AFCC5500C63B67 /* QuizList Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -30,6 +36,8 @@
 		CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */; };
 		CB9B5C7422AFCC5500C63B67 /* QuizList Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */; };
 		CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */; };
+		CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
+		CBEB121526A8D4E200294202 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleReaderTests.swift; sourceTree = "<group>"; };
+		CB139D4A28C554BB00D968B8 /* Data.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Data.bundle; sourceTree = SOURCE_ROOT; };
 		CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuizList.json; sourceTree = SOURCE_ROOT; };
 		CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CB64C23022ADAC40002B565F /* QuizList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +108,8 @@
 		CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManufactory.swift; sourceTree = "<group>"; };
 		CB87B76724F68E52004BA9F9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CB87B76B24F717A2004BA9F9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListApp.swift; sourceTree = "<group>"; };
+		CB97F9B626A9AA7A00A964E6 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizList Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9B5C5D22AFCC5400C63B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +120,8 @@
 		CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C7122AFCC5500C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRowType.swift; sourceTree = "<group>"; };
+		CBE854CF289FB4F6009B480C /* WinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningView.swift; sourceTree = "<group>"; };
+		CBEB121426A8D4E200294202 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,16 +175,19 @@
 			isa = PBXGroup;
 			children = (
 				CB64C23322ADAC40002B565F /* AppDelegate.swift */,
-				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
-				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
-				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
+				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
+				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
+				CBE854CF289FB4F6009B480C /* WinningView.swift */,
+				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
 				CB6E7DFC24FC371C007B03CF /* WriteView.swift */,
+				CBEB121426A8D4E200294202 /* HelpView.swift */,
 				CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */,
 				CB64C23722ADAC40002B565F /* Main.storyboard */,
 				CB64C23A22ADAC41002B565F /* Assets.xcassets */,
 				CB64C23C22ADAC41002B565F /* LaunchScreen.storyboard */,
 				CB64C23F22ADAC41002B565F /* Info.plist */,
+				CB139D4A28C554BB00D968B8 /* Data.bundle */,
 				CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */,
 			);
 			path = QuizList;
@@ -180,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CB64C24822ADAC42002B565F /* QuizListTests.swift */,
+				CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */,
 				CB64C24A22ADAC42002B565F /* Info.plist */,
 			);
 			path = QuizListTests;
@@ -201,6 +219,8 @@
 				CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */,
 				CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */,
 				CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */,
+				CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */,
+				CB97F9B626A9AA7A00A964E6 /* WatchView.swift */,
 				CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */,
 				CB9B5C7122AFCC5500C63B67 /* Info.plist */,
 			);
@@ -336,6 +356,7 @@
 				CB64C23B22ADAC41002B565F /* Assets.xcassets in Resources */,
 				CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */,
 				CB64C23922ADAC40002B565F /* Main.storyboard in Resources */,
+				CB139D4B28C554BB00D968B8 /* Data.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +394,10 @@
 			files = (
 				CB6E7DFD24FC371C007B03CF /* WriteView.swift in Sources */,
 				CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */,
+				CBEB121526A8D4E200294202 /* HelpView.swift in Sources */,
 				CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */,
 				CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
+				CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */,
 				CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */,
 				CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */,
 				CB64C25422ADAC55002B565F /* QuizList.swift in Sources */,
@@ -385,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB139D4928C5545F00D968B8 /* BundleReaderTests.swift in Sources */,
 				CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,10 +417,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */,
 				CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */,
 				CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */,
+				CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */,
 				CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
+				CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */,
 				CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */,
+				CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */,
 				CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -557,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -658,7 +686,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -677,7 +705,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -699,7 +727,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -721,7 +749,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
