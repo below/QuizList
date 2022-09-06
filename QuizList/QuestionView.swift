@@ -14,11 +14,14 @@ struct QuestionView: View {
     @State var item = 0
     @State var showCorrectAnswer: Bool = false
     @State var answerSet: QuestionManufactory.Answers!
+    @State private var showReward = true
+
+    // Needs to be moved to subview
 
     init(list: QuizList, item: Int? = nil) {
         self.list = list
         self.quizFactory = QuestionManufactory(list: list) {
-            NSLog("We hit all correct!")
+            
         }
         if let item = item {
             self.item = item
@@ -77,6 +80,14 @@ struct QuestionView: View {
         }
         .font(.system(.title))
         .multilineTextAlignment(.center)
+        .sheet(isPresented: $showReward, onDismiss: {
+                    print("Boom")
+                }) {
+                    if let image = UIImage(systemName: "gear") {
+                        WinningView(image: image)
+                    }
+
+                }
     }
 }
 

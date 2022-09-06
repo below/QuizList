@@ -18,26 +18,35 @@ class TabBarController: UITabBarController, ListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if true {
-            do {
-                let bundles = Bundle.main.urls(
-                    forResourcesWithExtension: "bundle",
-                    subdirectory: nil)
-                if let dataBundleUrl = bundles?.first,
-                    let dataBundle = Bundle(url: dataBundleUrl),
-                                            let dataFileUrl = dataBundle.url(
-                                                forResource: "data",
-                                                withExtension: "json") {
+        
+        let settingsView = SettingsViewHostingController(
+            rootView: SettingsView())
+        settingsView.tabBarItem = UITabBarItem(
+            title: NSLocalizedString("Settings", comment: ""),
+            image: UIImage.init(systemName: "gear"),
+            selectedImage: nil)
+        self.viewControllers?.append(settingsView)
+        
+        do {
+            
+            if let absoluteString = UserDefaults().object(forKey: "CurrentList") as? String,
+               let url = URL(string: absoluteString) {
+                
+                if  let dataBundle = Bundle(url: url) {
+                   if let dataFileUrl = dataBundle.url(
+                    forResource: "data",
+                    withExtension: "json") {
+                    
                     let data = try Data(contentsOf: dataFileUrl)
                     let decoder = JSONDecoder()
                     list = try decoder.decode(QuizList.self, from: data)
-
+                    
                 }
             }
-            catch let error {
-                NSLog("\(error.localizedDescription)")
-            }
+        }
+        }
+        catch let error {
+            NSLog("\(error.localizedDescription)")
         }
         if list == nil {
             list = QuizList()
@@ -55,6 +64,4 @@ class TabBarController: UITabBarController, ListController {
             }
         }
     }
-    
-
 }

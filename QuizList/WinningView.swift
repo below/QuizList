@@ -10,10 +10,11 @@ import SwiftUI
 
 struct WinningView: View {
     @Environment(\.dismiss) var dismiss
+    var image: UIImage
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        Button("Great!") {
+        Image(uiImage: image)
+        Button("Thank You!") {
             dismiss()
         }
     }
@@ -21,6 +22,8 @@ struct WinningView: View {
 
 struct WinningView_Previews: PreviewProvider {
     static var previews: some View {
-        WinningView()
+        if let image = UIImage(systemName: "gear") {
+            WinningView(image: image)
+        }
     }
 }
