@@ -26,12 +26,12 @@
 		CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
 		CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76B24F717A2004BA9F9 /* ListView.swift */; };
+		CB8B555E28C7EB2D00FF026E /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
 		CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B626A9AA7A00A964E6 /* WatchView.swift */; };
 		CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */; };
 		CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 		CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */; };
 		CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */; };
-		CB9B5C6722AFCC5500C63B67 /* QuizList Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */; };
 		CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */; };
 		CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */; };
@@ -49,13 +49,6 @@
 			remoteGlobalIDString = CB64C22F22ADAC40002B565F;
 			remoteInfo = QuizList;
 		};
-		CB9B5C6822AFCC5500C63B67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB64C22822ADAC40002B565F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9B5C6522AFCC5500C63B67;
-			remoteInfo = "QuizList Watch Extension";
-		};
 		CB9B5C7222AFCC5500C63B67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB64C22822ADAC40002B565F /* Project object */;
@@ -66,17 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB9B5C7A22AFCC5500C63B67 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				CB9B5C6722AFCC5500C63B67 /* QuizList Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CB9B5C7C22AFCC5500C63B67 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,7 +98,6 @@
 		CB9B5C5D22AFCC5400C63B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C6122AFCC5400C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "QuizList Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,7 +149,6 @@
 				CB64C23022ADAC40002B565F /* QuizList.app */,
 				CB64C24422ADAC42002B565F /* QuizListTests.xctest */,
 				CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */,
-				CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,34 +255,17 @@
 			buildConfigurationList = CB9B5C7B22AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch" */;
 			buildPhases = (
 				CB9B5C5822AFCC5300C63B67 /* Resources */,
-				CB9B5C7A22AFCC5500C63B67 /* Embed App Extensions */,
+				CB9B5C6222AFCC5500C63B67 /* Sources */,
+				CB9B5C6322AFCC5500C63B67 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB9B5C6922AFCC5500C63B67 /* PBXTargetDependency */,
 			);
 			name = "QuizList Watch";
 			productName = "QuizList Watch";
 			productReference = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB9B5C7922AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch Extension" */;
-			buildPhases = (
-				CB9B5C6222AFCC5500C63B67 /* Sources */,
-				CB9B5C6322AFCC5500C63B67 /* Frameworks */,
-				CB9B5C6422AFCC5500C63B67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuizList Watch Extension";
-			productName = "QuizList Watch Extension";
-			productReference = CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -311,7 +274,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = None;
 				TargetAttributes = {
 					CB64C22F22ADAC40002B565F = {
@@ -322,9 +285,6 @@
 						TestTargetID = CB64C22F22ADAC40002B565F;
 					};
 					CB9B5C5922AFCC5300C63B67 = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
-					CB9B5C6522AFCC5500C63B67 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -345,7 +305,6 @@
 				CB64C22F22ADAC40002B565F /* QuizList */,
 				CB64C24322ADAC42002B565F /* QuizListTests */,
 				CB9B5C5922AFCC5300C63B67 /* QuizList Watch */,
-				CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -375,16 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */,
-				CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9B5C6422AFCC5500C63B67 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				CB6D719D22B04168004D7402 /* QuizList.json in Resources */,
 				CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */,
+				CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +378,7 @@
 				CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */,
 				CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */,
 				CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
+				CB8B555E28C7EB2D00FF026E /* WinningView.swift in Sources */,
 				CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */,
 				CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */,
 				CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */,
@@ -440,11 +393,6 @@
 			isa = PBXTargetDependency;
 			target = CB64C22F22ADAC40002B565F /* QuizList */;
 			targetProxy = CB64C24522ADAC42002B565F /* PBXContainerItemProxy */;
-		};
-		CB9B5C6922AFCC5500C63B67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */;
-			targetProxy = CB9B5C6822AFCC5500C63B67 /* PBXContainerItemProxy */;
 		};
 		CB9B5C7322AFCC5500C63B67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -680,17 +628,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				IBSC_MODULE = QuizList_Watch_Extension;
 				INFOPLIST_FILE = "QuizList Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -699,61 +651,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				IBSC_MODULE = QuizList_Watch_Extension;
 				INFOPLIST_FILE = "QuizList Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
-			};
-			name = Release;
-		};
-		CB9B5C7722AFCC5500C63B67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				INFOPLIST_FILE = "QuizList Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
-			};
-			name = Debug;
-		};
-		CB9B5C7822AFCC5500C63B67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				INFOPLIST_FILE = "QuizList Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -783,15 +695,6 @@
 			buildConfigurations = (
 				CB64C25122ADAC42002B565F /* Debug */,
 				CB64C25222ADAC42002B565F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB9B5C7922AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB9B5C7722AFCC5500C63B67 /* Debug */,
-				CB9B5C7822AFCC5500C63B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

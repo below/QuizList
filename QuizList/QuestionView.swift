@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// https://twitter.com/teilweise/status/1567240328305942528
+
 struct QuestionView: View {
     private var list: QuizList
     private var quizFactory: QuestionManufactory
