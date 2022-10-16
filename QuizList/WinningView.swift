@@ -10,20 +10,29 @@ import SwiftUI
 
 struct WinningView: View {
     @Environment(\.dismiss) var dismiss
-    var image: UIImage
+    var image: UIImage?
 
     var body: some View {
-        Image(uiImage: image)
-        Button("Thank You!") {
-            dismiss()
+        VStack {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .imageScale(.large)
+                    .foregroundColor(.green)
+            }
+            Button("Thank You!") {
+                dismiss()
+            }
         }
     }
 }
 
 struct WinningView_Previews: PreviewProvider {
     static var previews: some View {
-        if let image = UIImage(systemName: "gear") {
-            WinningView(image: image)
-        }
+        WinningView(image:UIImage(named: "SampleImage"))
     }
 }

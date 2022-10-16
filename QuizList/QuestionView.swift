@@ -10,6 +10,8 @@ import SwiftUI
 
 // https://twitter.com/teilweise/status/1567240328305942528
 
+let RewardNotificationName = Notification.Name.init("allCorrect")
+
 struct QuestionView: View {
     private var list: QuizList
     private var quizFactory: QuestionManufactory
@@ -23,7 +25,9 @@ struct QuestionView: View {
     init(list: QuizList, item: Int? = nil) {
         self.list = list
         self.quizFactory = QuestionManufactory(list: list) {
-            
+            NotificationCenter.default.post(
+                name: RewardNotificationName,
+                object: nil)
         }
         if let item = item {
             self.item = item
@@ -82,14 +86,20 @@ struct QuestionView: View {
         }
         .font(.system(.title))
         .multilineTextAlignment(.center)
-        .sheet(isPresented: $showReward, onDismiss: {
-                    print("Boom")
-                }) {
-                    if let image = UIImage(systemName: "gear") {
-                        WinningView(image: image)
-                    }
-
+        .onAppear {
+            NotificationCenter.default.addObserver(
+                forName: RewardNotificationName,
+                object: nil,
+                queue: .main) { note in
+                    self.showReward = true
                 }
+        }
+        .sheet(isPresented: $showReward, onDismiss: {}) {
+
+            let image: UIImage? = list.randomPicture
+            WinningView(image: image)
+            
+        }
     }
 }
 

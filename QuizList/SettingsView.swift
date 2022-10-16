@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var quizLists = ["bar"]
-    @State private var selectedList: String = "bar"
+    @State var quizLists = ["Default"]
+    @State private var selectedList: String = "Default"
     @AppStorage("CurrentList") var currentList: String = ""
     var body: some View {
         VStack {
@@ -29,7 +29,6 @@ struct SettingsView: View {
             }
         }
     }
-    
    
     func reloadLists () {
         

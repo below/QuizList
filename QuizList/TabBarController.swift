@@ -48,7 +48,15 @@ class TabBarController: UITabBarController, ListController {
             NSLog("\(error.localizedDescription)")
         }
         if list == nil {
-            list = QuizList()
+            if let defaultDataURL: URL = Bundle.main.url(
+                forResource: "Data",
+                withExtension: "quizlist"),
+               let dataBundle = Bundle(url: defaultDataURL)
+            {
+                list = QuizList(contentsOf: dataBundle)
+            } else {
+                list = QuizList()
+            }
         }
         
         if let array: [UIViewController] = self.viewControllers {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct QuizListElement: Equatable, Codable {
     var number: Int
@@ -21,6 +22,10 @@ struct QuizListElement: Equatable, Codable {
 struct QuizList : Codable  {
     typealias Index = Int
     typealias Element = QuizListElement
+    
+    let items: [Element]
+    let version: Double
+    var winningPictures: [String]?
 
     init() {
         version = 2.0
@@ -45,8 +50,36 @@ struct QuizList : Codable  {
         }
     }
     
-    let items: [Element]
-    let version: Double
-    var winningPictures: [String]?
+    init?(contentsOf bundle: Bundle) {
+        guard let dataFileUrl = bundle.url(
+            forResource: "data",
+            withExtension: "json") else {
+            return nil
+        }
+        guard let list = QuizList(contentsOf: dataFileUrl) else {
+            return nil
+        }
+        self = list
+        if let imageURLs = bundle.urls(
+            forResourcesWithExtension: nil,
+            subdirectory: "images") {
+            self.winningPictures = imageURLs.map({ url in
+                url.absoluteString
+            })
+        }
+    }
     
+    var randomPicture: UIImage? {
+        if let picturePath = winningPictures?.randomElement(),
+           let url = URL(string: picturePath) {
+            do {
+                let data = try Data(contentsOf: url)
+                return UIImage(data: data)
+            } catch {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
 }
