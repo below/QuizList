@@ -34,8 +34,19 @@ struct QuizList : Codable  {
         winningPictures = []
     }
     
+    init?(contentsOf url: URL) {
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let list = try decoder.decode(QuizList.self, from: data)
+            self = list
+        } catch {
+            return nil
+        }
+    }
+    
     let items: [Element]
     let version: Double
-    let winningPictures: [String]
+    var winningPictures: [String]?
     
 }

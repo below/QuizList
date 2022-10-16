@@ -9,33 +9,20 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var quizLists = [URL(fileURLWithPath: "/foo/bar")]
-    @State private var selectedList: URL = URL(fileURLWithPath: "/foo/bar")
+    @State var quizLists = ["bar"]
+    @State private var selectedList: String = "bar"
     @AppStorage("CurrentList") var currentList: String = ""
     var body: some View {
         VStack {
             Picker("Select a QuizList",
                    selection: $selectedList) {
                 ForEach(quizLists, id: \.self) {
-                    Text($0.deletingPathExtension().lastPathComponent)
+                    Text(NSString(string: $0).deletingPathExtension)
                 }
             }
                    .onChange(of: selectedList, perform: { newValue in
-                       let absoluteString = selectedList.absoluteString
-                 
-                       
-                        currentList = absoluteString
-                       if let url = URL(string: absoluteString) {
-                           guard let bundle = Bundle(url: url) else {
-                               NSLog ("Bundle with URL failed")
-                               return
-                           }
-                           guard let pathBundle = Bundle(path: url.path) else {
-                               NSLog ("Bundle with path failed")
-                               return
-                           }
-                       }
-                                          })
+                       currentList = newValue
+                   })
                    .padding()
             Button("Reload") {
                 self.reloadLists()
@@ -43,22 +30,19 @@ struct SettingsView: View {
         }
     }
     
+   
     func reloadLists () {
         
-        let paths = FileManager.default.urls(
-            for: .documentDirectory,
-            in: .userDomainMask)
-        
-        if let documentDir = paths.first,
-           let contents = try? FileManager.default.contentsOfDirectory(
-            at: documentDir,
+        let fm = FileManager.default
+        if let contents = try? fm.contentsOfDirectory(
+            at: fm.documentsDirURL,
             includingPropertiesForKeys: nil) {
             let lists = contents.compactMap {
-                url -> URL? in
+                url -> String? in
                 guard url.pathExtension == "quizlist" else {
                     return nil
                 }
-                return url
+                return url.lastPathComponent
             }
             quizLists = lists
             if let first = lists.first {

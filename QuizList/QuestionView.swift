@@ -16,7 +16,7 @@ struct QuestionView: View {
     @State var item = 0
     @State var showCorrectAnswer: Bool = false
     @State var answerSet: QuestionManufactory.Answers!
-    @State private var showReward = true
+    @State private var showReward = false
 
     // Needs to be moved to subview
 

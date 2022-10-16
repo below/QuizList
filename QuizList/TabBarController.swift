@@ -29,21 +29,20 @@ class TabBarController: UITabBarController, ListController {
         
         do {
             
-            if let absoluteString = UserDefaults().object(forKey: "CurrentList") as? String,
-               let url = URL(string: absoluteString) {
-                
+            if let bundleName = UserDefaults().object(forKey: "CurrentList") as? String {
+                let url = FileManager.default.documentsDirURL.appendingPathComponent(bundleName)
                 if  let dataBundle = Bundle(url: url) {
-                   if let dataFileUrl = dataBundle.url(
-                    forResource: "data",
-                    withExtension: "json") {
-                    
-                    let data = try Data(contentsOf: dataFileUrl)
-                    let decoder = JSONDecoder()
-                    list = try decoder.decode(QuizList.self, from: data)
-                    
+                    if let dataFileUrl = dataBundle.url(
+                        forResource: "data",
+                        withExtension: "json") {
+                        
+                        let data = try Data(contentsOf: dataFileUrl)
+                        let decoder = JSONDecoder()
+                        list = try decoder.decode(QuizList.self, from: data)
+                        
+                    }
                 }
             }
-        }
         }
         catch let error {
             NSLog("\(error.localizedDescription)")
