@@ -14,7 +14,9 @@ final class BundleReaderTests: XCTestCase {
     var list: QuizList!
     
     override func setUpWithError() throws {
-        guard let url = Bundle.main.url(forResource: "Data", withExtension: "quizlist") else {
+        guard let url = Bundle.main.url(
+            forResource: "Data",
+            withExtension: Constants.FileExtenstion.rawValue) else {
             XCTFail("Bundle was nil")
             return
         }

@@ -25,7 +25,7 @@ struct QuizList : Codable  {
     
     let items: [Element]
     let version: Double
-    var winningPictures: [String]?
+    private var winningPictures: [String]?
 
     init() {
         version = 2.0
@@ -69,17 +69,31 @@ struct QuizList : Codable  {
         }
     }
     
-    var randomPicture: UIImage? {
-        if let picturePath = winningPictures?.randomElement(),
-           let url = URL(string: picturePath) {
-            do {
-                let data = try Data(contentsOf: url)
-                return UIImage(data: data)
-            } catch {
-                return nil
-            }
-        } else {
+    private func image(from path: String) -> UIImage? {
+        guard let url = URL(string: path) else {
             return nil
+        }
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)
+        } catch {
+            return nil
+        }
+    }
+    
+    var randomPicture: UIImage? {
+        guard let picturePath = winningPictures?.randomElement() else {
+            return nil
+        }
+        return self.image(from: picturePath)
+    }
+    
+    var imagePaths: [URL] {
+        guard let winningPictures = winningPictures else {
+            return [URL]()
+        }
+        return winningPictures.compactMap { path in
+            return URL(string: path)
         }
     }
 }

@@ -17,5 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(
+        _ application: UIApplication,
+        open url: URL, sourceApplication: String?,
+        annotation: Any) -> Bool {
+        print ("Deprecated Method called")
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        // https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application
+        print("open: options:")
+        return true
+    }
 }
 

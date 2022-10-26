@@ -22,14 +22,41 @@ struct SettingsView: View {
             }
                    .onChange(of: selectedList, perform: { newValue in
                        currentList = newValue
+                       syncCollectionToSecureStorage()
                    })
                    .padding()
             Button("Reload") {
                 self.reloadLists()
             }
+            .padding()
+            Button("Sync") {
+                self.syncCollectionToSecureStorage()
+            }
+            .padding()
         }
     }
    
+    func syncCollectionToSecureStorage() {
+        let sourceURL = FileManager.default.documentsDirURL
+            .appendingPathComponent(currentList)
+        if let containerURL = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: Constants.GroupIdentifier.rawValue) {
+            let targetURL = containerURL.appendingPathComponent(currentList)
+            do {
+                try FileManager.default.copyItem(
+                 at: sourceURL,
+                 to: targetURL)
+            } catch {
+                let nsError = error as NSError
+                if nsError.domain == NSPOSIXErrorDomain, nsError.code == 17 {
+                    // File exists
+                    return
+                }
+                print ("Unable to copy: \(error)")
+            }
+        }
+    }
+    
     func reloadLists () {
         
         let fm = FileManager.default
@@ -38,7 +65,7 @@ struct SettingsView: View {
             includingPropertiesForKeys: nil) {
             let lists = contents.compactMap {
                 url -> String? in
-                guard url.pathExtension == "quizlist" else {
+                guard url.pathExtension == Constants.FileExtenstion.rawValue else {
                     return nil
                 }
                 return url.lastPathComponent

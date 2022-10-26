@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public enum Constants: String {
+    case GroupIdentifier = "group.com.vonbelow.quizlist"
+    case FileExtenstion = "quizlist"
+}

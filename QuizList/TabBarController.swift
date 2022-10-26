@@ -12,10 +12,17 @@ protocol ListController {
     var list: QuizList! { get set }
 }
 
-class TabBarController: UITabBarController, ListController {
+extension UserDefaults {
+    @objc dynamic var CurrentList: String? {
+        return string(forKey: "CurrentList")
+    }
+}
 
-    var list: QuizList!
+class TabBarController: UITabBarController, ListController {
     
+    var list: QuizList!
+    var observer: NSKeyValueObservation?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,30 +34,22 @@ class TabBarController: UITabBarController, ListController {
             selectedImage: nil)
         self.viewControllers?.append(settingsView)
         
-        do {
-            
-            if let bundleName = UserDefaults().object(forKey: "CurrentList") as? String {
-                let url = FileManager.default.documentsDirURL.appendingPathComponent(bundleName)
-                if  let dataBundle = Bundle(url: url) {
-                    if let dataFileUrl = dataBundle.url(
-                        forResource: "data",
-                        withExtension: "json") {
-                        
-                        let data = try Data(contentsOf: dataFileUrl)
-                        let decoder = JSONDecoder()
-                        list = try decoder.decode(QuizList.self, from: data)
-                        
-                    }
-                }
+        observer = UserDefaults.standard.observe(\.CurrentList) { defaults, value in
+            print ("KVO: Value change \(value)")
+
+        }
+        
+        if let bundleName = UserDefaults().object(forKey: "CurrentList") as? String {
+            let url = FileManager.default.documentsDirURL.appendingPathComponent(bundleName)
+            if  let dataBundle = Bundle(url: url) {
+                list = QuizList(contentsOf: dataBundle)
             }
         }
-        catch let error {
-            NSLog("\(error.localizedDescription)")
-        }
+        
         if list == nil {
             if let defaultDataURL: URL = Bundle.main.url(
                 forResource: "Data",
-                withExtension: "quizlist"),
+                withExtension: Constants.FileExtenstion.rawValue),
                let dataBundle = Bundle(url: defaultDataURL)
             {
                 list = QuizList(contentsOf: dataBundle)
@@ -70,5 +69,9 @@ class TabBarController: UITabBarController, ListController {
                 }
             }
         }
+    }
+    
+    deinit {
+        observer?.invalidate()
     }
 }
