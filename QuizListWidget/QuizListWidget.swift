@@ -125,7 +125,7 @@ struct QuizListWidgetEntryView : View {
                 VStack {
                     Text (entry.heading)
                         .padding()
-                    Spacer()
+                    Spacer(minLength: 0)
                     Text (entry.text)
                         .padding()
                 }
@@ -133,7 +133,7 @@ struct QuizListWidgetEntryView : View {
                 
                 Image(uiImage: entry.image)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .clipped()
             }
