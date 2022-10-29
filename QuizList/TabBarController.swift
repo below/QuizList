@@ -36,8 +36,19 @@ class TabBarController: UITabBarController, ListController {
         
         observer = UserDefaults.standard.observe(\.CurrentList) { defaults, value in
             print ("KVO: Value change \(value)")
-
+            print ("Defaults changed: \(defaults.CurrentList ?? "<NIL>")")
+            self.list = self.quizBundle()
+            
+            self.updateViewControllers()
         }
+        
+        list = quizBundle()
+
+        updateViewControllers()
+    }
+    
+    func quizBundle() -> QuizList {
+        var list: QuizList?
         
         if let bundleName = UserDefaults().object(forKey: "CurrentList") as? String {
             let url = FileManager.default.documentsDirURL.appendingPathComponent(bundleName)
@@ -57,6 +68,13 @@ class TabBarController: UITabBarController, ListController {
                 list = QuizList()
             }
         }
+        guard let list = list else {
+            fatalError("Unable to create a QuizList")
+        }
+        return list
+    }
+    
+    func updateViewControllers() {
         
         if let array: [UIViewController] = self.viewControllers {
             for vc in array  {
