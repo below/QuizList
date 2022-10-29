@@ -41,10 +41,15 @@ struct WriteView: View {
     @State var answer: String = ""
     @State var showAnswer: AnswerState?
     @State var currentQuestion = 0
+    @State private var showReward = false
 
     init(list: QuizList) {
         self.list = list
-        self.quizFactory = QuestionManufactory(list: list)
+        self.quizFactory = QuestionManufactory(list: list) {
+            NotificationCenter.default.post(
+                name: RewardNotificationName,
+                object: nil)
+        }
         currentQuestion = quizFactory.nextQuestion()
     }
 
@@ -64,7 +69,9 @@ struct WriteView: View {
 
     var body: some View {
         VStack {
-            Text("Item \(currentQuestion + 1)").font(.largeTitle)
+            HStack {
+                Text("Item \(currentQuestion + 1)").font(.largeTitle)
+            }
             TextField("Enter Answer", text: $answer) { (changed) in
                 debugPrint("Foo")
             } onCommit: {
@@ -75,6 +82,20 @@ struct WriteView: View {
             }.padding()
             CorrectAnswerView(answerState: showAnswer, text: list.items[currentQuestion].text)
             Spacer()
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(
+                forName: RewardNotificationName,
+                object: nil,
+                queue: .main) { note in
+                    self.showReward = true
+                }
+        }
+        .sheet(isPresented: $showReward, onDismiss: {}) {
+
+            let image: UIImage? = list.randomPicture
+            WinningView(image: image)
+            
         }
     }
 }
