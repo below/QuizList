@@ -42,6 +42,7 @@ struct WriteView: View {
     @State var showAnswer: AnswerState?
     @State var currentQuestion = 0
     @State private var showReward = false
+    @FocusState private var answerIsFocussed: Bool
 
     init(list: QuizList) {
         self.list = list
@@ -75,13 +76,19 @@ struct WriteView: View {
             TextField("Enter Answer", text: $answer) { (changed) in
                 debugPrint("Foo")
             } onCommit: {
+                answerIsFocussed = false
                 checkAnswer()
-            }.multilineTextAlignment(.center)
+            }
+            .multilineTextAlignment(.center)
+            .focused($answerIsFocussed)
             Button("Try Me") {
                 checkAnswer()
             }.padding()
             CorrectAnswerView(answerState: showAnswer, text: list.items[currentQuestion].text)
             Spacer()
+        }
+        .onTapGesture {
+            answerIsFocussed = false
         }
         .onAppear {
             NotificationCenter.default.addObserver(

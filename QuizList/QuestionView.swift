@@ -105,7 +105,6 @@ struct QuestionView: View {
 
 #if os(iOS)
 class QuestionViewHostingController: UIHostingController<QuestionView>, ListController {
-    let questionView = QuestionView(list: QuizList())
 
     var list: QuizList! {
         didSet {
