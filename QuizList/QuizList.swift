@@ -25,7 +25,7 @@ struct QuizList : Codable  {
     
     let items: [Element]
     let version: Double
-    private var winningPictures: [String]?
+    var winningPictures: [String]?
 
     init() {
         version = 2.0
