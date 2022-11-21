@@ -19,10 +19,13 @@ struct QuestionView: View {
     @State var showCorrectAnswer: Bool = false
     @State var answerSet: QuestionManufactory.Answers!
     @State private var showReward = false
-
+    var watchOS = false
     // Needs to be moved to subview
 
     init(list: QuizList, item: Int? = nil) {
+        #if (watchOS)
+        watchOS = true
+        #endif
         self.list = list
         self.quizFactory = QuestionManufactory(list: list) {
             NotificationCenter.default.post(
@@ -72,6 +75,8 @@ struct QuestionView: View {
                     }
                 }, label: {
                     let text = Text(answerText)
+                        .font(watchOS ? .title : .caption)
+                        .lineLimit(nil)
                         .padding()
 
                     if showCorrectAnswer, i == answerSet.correctAnswer {
