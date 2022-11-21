@@ -46,13 +46,9 @@
 		CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B626A9AA7A00A964E6 /* WatchView.swift */; };
 		CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */; };
 		CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
-		CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */; };
 		CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */; };
-		CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */; };
-		CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */; };
 		CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */; };
 		CB9B5C7422AFCC5500C63B67 /* QuizList Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */; };
-		CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */; };
 		CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
 		CBEB121526A8D4E200294202 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 /* End PBXBuildFile section */
@@ -142,14 +138,10 @@
 		CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListApp.swift; sourceTree = "<group>"; };
 		CB97F9B626A9AA7A00A964E6 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizList Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9B5C5D22AFCC5400C63B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C6122AFCC5400C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C7122AFCC5500C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRowType.swift; sourceTree = "<group>"; };
 		CB9D2A1428FC8611002B39C6 /* sample.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = sample.xcappdata; path = ../sample.xcappdata; sourceTree = "<group>"; };
 		CBE854CF289FB4F6009B480C /* WinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningView.swift; sourceTree = "<group>"; };
 		CBEB121426A8D4E200294202 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
@@ -284,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				CB12060D28FCBB1000B1825D /* QuizList Watch.entitlements */,
-				CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */,
 				CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */,
 				CB9B5C6122AFCC5400C63B67 /* Info.plist */,
 			);
@@ -294,9 +285,6 @@
 		CB9B5C6A22AFCC5500C63B67 /* QuizList Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */,
-				CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */,
-				CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */,
 				CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */,
 				CB97F9B626A9AA7A00A964E6 /* WatchView.swift */,
 				CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */,
@@ -465,7 +453,6 @@
 				CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */,
 				CB6D719D22B04168004D7402 /* QuizList.json in Resources */,
 				CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */,
-				CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,8 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */,
-				CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */,
-				CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */,
 				CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */,
 				CB82DA6028FD472D006FCF68 /* SharedIdentifiers.swift in Sources */,
 				CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
@@ -527,7 +512,6 @@
 				CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */,
 				CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */,
 				CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */,
-				CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,14 +550,6 @@
 				CB64C23D22ADAC41002B565F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB9B5C5D22AFCC5400C63B67 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
