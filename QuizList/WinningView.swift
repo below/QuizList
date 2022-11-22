@@ -23,6 +23,7 @@ struct WinningView: View {
                     .resizable()
                     .imageScale(.large)
                     .foregroundColor(.green)
+                    .aspectRatio(contentMode: .fit)
             }
             Button("Thank You!") {
                 dismiss()
