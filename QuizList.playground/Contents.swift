@@ -1,17 +1,5 @@
-import Combine
-import SwiftUI
-import PlaygroundSupport
+import Foundation
 
-struct ContentView: View {
+let url = URL(string: "file:///below/foo.bar")!
 
-    var body: some View {
-        HStack {
-            Button("Lorem ipsum dolor sit amet, consectetur adipiscing eli") {
-            }
-            .lineLimit(nil)
-        }
-        .frame(width: 200)
-    }
-}
-
-PlaygroundPage.current.setLiveView(ContentView())
+let name = url.deletingPathExtension().lastPathComponent

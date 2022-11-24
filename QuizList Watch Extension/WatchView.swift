@@ -9,14 +9,23 @@
 import SwiftUI
 
 struct WatchView: View {
+    var list: QuizList!
+    init() {
+        if let quiz = try? QuizList(firstAt: ContainerURL()) {
+            self.list = quiz
+        } else {
+            self.list = QuizList()
+        }
+    }
+    
     var body: some View {
         TabView {
             ScrollView {
-                QuestionView(list: QuizList())
+                QuestionView(list: list)
             }
-                .tabItem {
-                    Text("Quiz")
-                }
+            .tabItem {
+                Text("Quiz")
+            }
             HelpView(list: QuizList())
                 .tabItem {
                     Text("Help")

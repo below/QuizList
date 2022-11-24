@@ -19,13 +19,13 @@ struct QuestionView: View {
     @State var showCorrectAnswer: Bool = false
     @State var answerSet: QuestionManufactory.Answers!
     @State private var showReward = false
-    var watchOS = false
+    @State var watchOS = false
     // Needs to be moved to subview
-
+    
     init(list: QuizList, item: Int? = nil) {
-        #if (watchOS)
+#if os(watchOS)
         watchOS = true
-        #endif
+#endif
         self.list = list
         self.quizFactory = QuestionManufactory(list: list) {
             NotificationCenter.default.post(
@@ -44,70 +44,68 @@ struct QuestionView: View {
             debugPrint("Unable to create answer set")
         }
     }
-
+    
     func nextQuestion() {
         self.showCorrectAnswer = false
         self.item = self.quizFactory.nextQuestion()
         self.answerSet = try! quizFactory.answers(question: self.item, number: 4)
     }
-
+    
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                Text("Item # \(list.items[item].number)")
-                    .bold()
-                    .font(watchOS ? .title : .title3)
-                Spacer()
-                
-                ForEach(0..<answerSet.answers.count, id: \.self) { i in
-                    let answerText = answerSet.answers[i]
-                    Button(action: {
-                        // Don't like this …
-                        // The idea is that there may be more than one
-                        // item with the same text
-                        
-                        // Update: There should be only one correct answer
-                        if i == answerSet.correctAnswer || answerText == answerSet.answers[answerSet.correctAnswer] {
-                            quizFactory.appendCorrectAnswer(self.item)
-                            self.nextQuestion()
-                        } else {
-                            self.showCorrectAnswer = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                self.nextQuestion()
-                            }
-                        }
-                    }, label: {
-                        let text = Text(answerText)
-                            .font(watchOS ? .title : .caption)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding()
-                        
-                        if showCorrectAnswer, i == answerSet.correctAnswer {
-                            text.foregroundColor(.red)
-                        } else {
-                            text
-                        }
-                    }).frame(maxWidth: .infinity)
+        VStack(spacing: 10) {
+            Text("Item # \(list.items[item].number)")
+                .bold()
+                .font(watchOS ? .title3 : .title)
+            Spacer()
+            
+            ForEach(0..<answerSet.answers.count, id: \.self) { i in
+                let answerText = answerSet.answers[i]
+                Button(action: {
+                    // Don't like this …
+                    // The idea is that there may be more than one
+                    // item with the same text
                     
-                }
-                Spacer()
-            }
-            .font(.system(.title))
-            .multilineTextAlignment(.center)
-            .onAppear {
-                NotificationCenter.default.addObserver(
-                    forName: RewardNotificationName,
-                    object: nil,
-                    queue: .main) { note in
-                        self.showReward = true
+                    // Update: There should be only one correct answer
+                    if i == answerSet.correctAnswer || answerText == answerSet.answers[answerSet.correctAnswer] {
+                        quizFactory.appendCorrectAnswer(self.item)
+                        self.nextQuestion()
+                    } else {
+                        self.showCorrectAnswer = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.nextQuestion()
+                        }
                     }
-            }
-            .sheet(isPresented: $showReward, onDismiss: {}) {
+                }, label: {
+                    let text = Text(answerText)
+                        .font(watchOS ? .caption : .title)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding()
+                    
+                    if showCorrectAnswer, i == answerSet.correctAnswer {
+                        text.foregroundColor(.red)
+                    } else {
+                        text
+                    }
+                }).frame(maxWidth: .infinity)
                 
-                let image: UIImage? = list.randomPicture
-                WinningView(image: image)
-                
             }
+            Spacer()
+        }
+        .font(.system(.title))
+        .multilineTextAlignment(.center)
+        .onAppear {
+            NotificationCenter.default.addObserver(
+                forName: RewardNotificationName,
+                object: nil,
+                queue: .main) { note in
+                    self.showReward = true
+                }
+        }
+        .sheet(isPresented: $showReward, onDismiss: {}) {
+            
+            let image: UIImage? = list.randomPicture
+            WinningView(image: image)
+            
         }
     }
 }

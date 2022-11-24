@@ -51,16 +51,9 @@ struct Provider: IntentTimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         
-        if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.vonbelow.quizlist")
-        {
             do {
-                let content = try FileManager.default.contentsOfDirectory(
-                    at: url,
-                    includingPropertiesForKeys: nil)
-                if let url = content.first(
-                    where: { $0.pathExtension == Constants.FileExtenstion.rawValue }),
-                   let bundle = Bundle(url: url),
-                   let list = QuizList(contentsOf: bundle) {
+                if let list = try QuizList(
+                    firstAt: ContainerURL()) {
                     
                     var date = Date()
                     var imagePaths = list.imagePaths
@@ -97,7 +90,6 @@ struct Provider: IntentTimelineProvider {
             catch {
                 print ("We got an error:\(error)")
             }
-        }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)

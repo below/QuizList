@@ -7,9 +7,19 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 @main
 struct QuizListApp: App {
+    let sessionDelegate = WatchConnectionDelegate()
+    
+    init() {
+        if WCSession.isSupported() { // It always is, on the watch
+            let session = WCSession.default
+            session.delegate = sessionDelegate
+            session.activate()
+        }
+    }
     var body: some Scene {
         WindowGroup {
             WatchView()

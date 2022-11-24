@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct SettingsView: View {
     @State var quizLists = ["Default"]
@@ -53,6 +54,21 @@ struct SettingsView: View {
                     return
                 }
                 print ("Unable to copy: \(error)")
+            }
+        }
+// Watch Integration
+        if WCSession.isSupported() {
+            let session = WCSession.default
+            if session.activationState == .activated,
+               session.isWatchAppInstalled {
+                
+                do {
+                    let compressedURL = try compress(url: sourceURL)
+                    _ = session.transferFile(compressedURL,
+                                                        metadata: nil)
+                } catch {
+                    print ("Unable to compress \(sourceURL.absoluteString): \(error)")
+                }
             }
         }
     }

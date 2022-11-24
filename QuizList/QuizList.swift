@@ -50,6 +50,21 @@ struct QuizList : Codable  {
         }
     }
     
+    init?(firstAt url: URL) throws {
+        let content = try FileManager.default.contentsOfDirectory(
+            at: url,
+            includingPropertiesForKeys: nil)
+        if let url = content.first(
+            where: { $0.pathExtension == Constants.FileExtenstion.rawValue }),
+           let bundle = Bundle(url: url),
+           let list = QuizList(contentsOf: bundle) {
+               self = list
+               return
+           } else {
+               return nil
+           }
+    }
+    
     init?(contentsOf bundle: Bundle) {
         guard let dataFileUrl = bundle.url(
             forResource: "data",

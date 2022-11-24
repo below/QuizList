@@ -12,3 +12,9 @@ public enum Constants: String {
     case GroupIdentifier = "group.com.vonbelow.quizlist"
     case FileExtenstion = "quizlist"
 }
+
+func ContainerURL() -> URL {
+    let url = FileManager.default.containerURL(
+        forSecurityApplicationGroupIdentifier: Constants.GroupIdentifier.rawValue)
+    return url!
+}
