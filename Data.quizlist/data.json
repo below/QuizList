@@ -1,0 +1,25 @@
+{
+  "version": 2.0,
+  "items" : [
+    {
+      "number" : 1,
+      "text" : "Surprise"
+    },
+    {
+      "number" : 2,
+      "text" : "Fear"
+    },
+    {
+      "number" : 3,
+      "text" : "Ruthless efficiency"
+    },
+    {
+      "number" : 4,
+      "text" : "Almost fanatical devotion to the Pope"
+    },
+    {
+      "number" : 5,
+      "text" : "Nice red uniforms"
+    }
+  ],
+}

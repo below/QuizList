@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias AllCorrectClosure = () -> Void
+
 class QuestionManufactory {
     
     enum QuestionError : Error {
@@ -15,6 +17,7 @@ class QuestionManufactory {
     }
     
     var list: QuizList
+    var allCorrect: AllCorrectClosure?
     private var currentIndex = 0
     private var correctItems = [Int]()
     
@@ -24,23 +27,27 @@ class QuestionManufactory {
         }
     }
 
-    init(list : QuizList) {
+    init(list : QuizList, allCorrect: AllCorrectClosure? = nil) {
         self.list = list
+        self.allCorrect = allCorrect
     }
     
     func randomIndex () -> Int {
-        return Int.random(in: 0 ... list.count - 1)
+        return Int.random(in: 0 ... list.items.count - 1)
     }
     
     func nextQuestion () -> Int {
         
-        if correctItems.count == list.count {
+        if correctItems.count == list.items.count {
             correctItems.removeAll()
             inOrder = !inOrder
+            if let allCorrect = allCorrect {
+                allCorrect()
+            }
         }
 
         if inOrder {
-            defer {currentIndex = currentIndex + 1; if currentIndex >= list.count { currentIndex = 0 }}
+            defer {currentIndex = currentIndex + 1; if currentIndex >= list.items.count { currentIndex = 0 }}
             return currentIndex
         }
         else {
@@ -55,25 +62,29 @@ class QuestionManufactory {
     typealias Answers = (correctAnswer: Int, answers: [String])
     func answers (question: Int, number: Int) throws -> Answers {
         
-        guard number <= list.count-1 else {
+        guard number <= list.items.count-1 else {
             throw QuestionError.invalidParameters
         }
         
+   // https://twitter.com/smith47777/status/1554850985318703110
+        // Maybe later …
         let range = 0 ..< number
-        var usedAnswers = [question]
+        var usedAnswers = [list.items[question]]
+        
         let correctAnswerNumber = Int.random(in: range)
         var resultAnswers = [String]()
         for i in range {
             var answerNumber: Int!
+            var answer: QuizListElement!
             if i == correctAnswerNumber {
-                answerNumber = question
+                answer = list.items[question]
             } else {
                 repeat {
                     answerNumber = randomIndex()
-                } while usedAnswers.contains(answerNumber)
-                usedAnswers.append(answerNumber)
+                    answer = list.items[answerNumber]
+                } while usedAnswers.contains(answer)
+                usedAnswers.append(answer)
             }
-            let answer = list[answerNumber]
             resultAnswers.append(answer.text)
         }
         return (correctAnswerNumber, resultAnswers)

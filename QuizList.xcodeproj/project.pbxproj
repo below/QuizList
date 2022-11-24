@@ -7,46 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1205F928FCB3AB00B1825D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205F828FCB3AB00B1825D /* WidgetKit.framework */; };
+		CB1205FB28FCB3AB00B1825D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205FA28FCB3AB00B1825D /* SwiftUI.framework */; };
+		CB1205FE28FCB3AB00B1825D /* QuizListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FD28FCB3AB00B1825D /* QuizListWidget.swift */; };
+		CB12060128FCB3AC00B1825D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12060028FCB3AC00B1825D /* Assets.xcassets */; };
+		CB12060328FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */; };
+		CB12060428FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */; };
+		CB12060728FCB3AC00B1825D /* QuizListWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB1205F628FCB3AB00B1825D /* QuizListWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB139D4928C5545F00D968B8 /* BundleReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */; };
+		CB139D4B28C554BB00D968B8 /* Data.quizlist in Resources */ = {isa = PBXBuildFile; fileRef = CB139D4A28C554BB00D968B8 /* Data.quizlist */; };
+		CB139D4D28C5DDB600D968B8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB139D4C28C5DDB600D968B8 /* SettingsView.swift */; };
 		CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
-		CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1BF4D422B1997D0052D058 /* WriteController.swift */; };
-		CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5622AF0BB90086FD75 /* VCTests.swift */; };
-		CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */; };
 		CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
 		CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */; };
+		CB4FA0B628FD689E007A224D /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
+		CB4FA0B728FD6CC5007A224D /* SharedIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */; };
+		CB4FA0B828FD7F65007A224D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB567D4C28FC655C0016909B /* Preview Assets.xcassets */; };
+		CB567D4428FAAAA70016909B /* Data.quizlist in Resources */ = {isa = PBXBuildFile; fileRef = CB139D4A28C554BB00D968B8 /* Data.quizlist */; };
+		CB567D4628FC2A6D0016909B /* FileManager+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB567D4528FC2A6D0016909B /* FileManager+Utilities.swift */; };
+		CB567D4D28FC655C0016909B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB567D4C28FC655C0016909B /* Preview Assets.xcassets */; };
+		CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
 		CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23322ADAC40002B565F /* AppDelegate.swift */; };
-		CB64C23622ADAC40002B565F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C23522ADAC40002B565F /* ViewController.swift */; };
 		CB64C23922ADAC40002B565F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23722ADAC40002B565F /* Main.storyboard */; };
 		CB64C23B22ADAC41002B565F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23A22ADAC41002B565F /* Assets.xcassets */; };
 		CB64C23E22ADAC41002B565F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64C23C22ADAC41002B565F /* LaunchScreen.storyboard */; };
 		CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C24822ADAC42002B565F /* QuizListTests.swift */; };
 		CB64C25422ADAC55002B565F /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB6D719D22B04168004D7402 /* QuizList.json in Resources */ = {isa = PBXBuildFile; fileRef = CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */; };
+		CB6E7DFD24FC371C007B03CF /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6E7DFC24FC371C007B03CF /* WriteView.swift */; };
+		CB735C4C292E9FF600517085 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB735C4B292E9FF600517085 /* Compression.swift */; };
+		CB735C4D292E9FF600517085 /* Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB735C4B292E9FF600517085 /* Compression.swift */; };
 		CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
 		CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */; };
-		CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */; };
+		CB82DA5F28FD472D006FCF68 /* SharedIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */; };
+		CB82DA6028FD472D006FCF68 /* SharedIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */; };
+		CB82DA6128FD472D006FCF68 /* SharedIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */; };
+		CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76724F68E52004BA9F9 /* QuestionView.swift */; };
+		CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB87B76B24F717A2004BA9F9 /* ListView.swift */; };
+		CB8B555E28C7EB2D00FF026E /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
+		CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B626A9AA7A00A964E6 /* WatchView.swift */; };
+		CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */; };
+		CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 		CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */; };
-		CB9B5C6722AFCC5500C63B67 /* QuizList Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */; };
-		CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */; };
 		CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */; };
 		CB9B5C7422AFCC5500C63B67 /* QuizList Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */; };
-		CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */; };
+		CBB4C129292E84BF00C9BC0D /* WatchConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4D3D5292E8113002CF04C /* WatchConnectionDelegate.swift */; };
+		CBD4D3D3292E4A75002CF04C /* PhoneConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */; };
+		CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
+		CBEB121526A8D4E200294202 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB12060528FCB3AC00B1825D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB64C22822ADAC40002B565F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1205F528FCB3AB00B1825D;
+			remoteInfo = QuizListWidgetExtension;
+		};
 		CB64C24522ADAC42002B565F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB64C22822ADAC40002B565F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CB64C22F22ADAC40002B565F;
 			remoteInfo = QuizList;
-		};
-		CB9B5C6822AFCC5500C63B67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB64C22822ADAC40002B565F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9B5C6522AFCC5500C63B67;
-			remoteInfo = "QuizList Watch Extension";
 		};
 		CB9B5C7222AFCC5500C63B67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -58,15 +82,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB9B5C7A22AFCC5500C63B67 /* Embed App Extensions */ = {
+		CB12060828FCB3AD00B1825D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CB9B5C6722AFCC5500C63B67 /* QuizList Watch Extension.appex in Embed App Extensions */,
+				CB12060728FCB3AC00B1825D /* QuizListWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CB9B5C7C22AFCC5500C63B67 /* Embed Watch Content */ = {
@@ -83,14 +107,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB1BF4D422B1997D0052D058 /* WriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteController.swift; sourceTree = "<group>"; };
-		CB4F8D5622AF0BB90086FD75 /* VCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTests.swift; sourceTree = "<group>"; };
-		CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrderTableViewController.swift; sourceTree = "<group>"; };
+		CB1205F628FCB3AB00B1825D /* QuizListWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuizListWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1205F828FCB3AB00B1825D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CB1205FA28FCB3AB00B1825D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		CB1205FD28FCB3AB00B1825D /* QuizListWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListWidget.swift; sourceTree = "<group>"; };
+		CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QuizListWidget.intentdefinition; sourceTree = "<group>"; };
+		CB12060028FCB3AC00B1825D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB12060228FCB3AC00B1825D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB12060C28FCBAE100B1825D /* QuizList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuizList.entitlements; sourceTree = "<group>"; };
+		CB12060D28FCBB1000B1825D /* QuizList Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "QuizList Watch.entitlements"; sourceTree = "<group>"; };
+		CB12060E28FCBB2800B1825D /* QuizListWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuizListWidgetExtension.entitlements; sourceTree = "<group>"; };
+		CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleReaderTests.swift; sourceTree = "<group>"; };
+		CB139D4A28C554BB00D968B8 /* Data.quizlist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data.quizlist; sourceTree = SOURCE_ROOT; };
+		CB139D4C28C5DDB600D968B8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuizList.json; sourceTree = SOURCE_ROOT; };
 		CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CB567D4528FC2A6D0016909B /* FileManager+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Utilities.swift"; sourceTree = "<group>"; };
+		CB567D4C28FC655C0016909B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB64C23022ADAC40002B565F /* QuizList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB64C23322ADAC40002B565F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB64C23522ADAC40002B565F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB64C23822ADAC40002B565F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB64C23A22ADAC41002B565F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB64C23D22ADAC41002B565F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,20 +134,36 @@
 		CB64C24822ADAC42002B565F /* QuizListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListTests.swift; sourceTree = "<group>"; };
 		CB64C24A22ADAC42002B565F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB64C25322ADAC55002B565F /* QuizList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizList.swift; sourceTree = "<group>"; };
+		CB6E7DFC24FC371C007B03CF /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		CB735C4B292E9FF600517085 /* Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compression.swift; sourceTree = "<group>"; };
 		CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManufactory.swift; sourceTree = "<group>"; };
+		CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIdentifiers.swift; sourceTree = "<group>"; };
+		CB87B76724F68E52004BA9F9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		CB87B76B24F717A2004BA9F9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListApp.swift; sourceTree = "<group>"; };
+		CB97F9B626A9AA7A00A964E6 /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 		CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizList Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9B5C5D22AFCC5400C63B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C6122AFCC5400C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "QuizList Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C7122AFCC5500C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRowType.swift; sourceTree = "<group>"; };
+		CB9D2A1428FC8611002B39C6 /* sample.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = sample.xcappdata; path = ../sample.xcappdata; sourceTree = "<group>"; };
+		CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectionDelegate.swift; sourceTree = "<group>"; };
+		CBD4D3D5292E8113002CF04C /* WatchConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectionDelegate.swift; sourceTree = "<group>"; };
+		CBE854CF289FB4F6009B480C /* WinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningView.swift; sourceTree = "<group>"; };
+		CBEB121426A8D4E200294202 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CB1205F328FCB3AB00B1825D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1205FB28FCB3AB00B1825D /* SwiftUI.framework in Frameworks */,
+				CB1205F928FCB3AB00B1825D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB64C22D22ADAC40002B565F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +188,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1205F728FCB3AB00B1825D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB1205F828FCB3AB00B1825D /* WidgetKit.framework */,
+				CB1205FA28FCB3AB00B1825D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB1205FC28FCB3AB00B1825D /* QuizListWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CB1205FD28FCB3AB00B1825D /* QuizListWidget.swift */,
+				CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */,
+				CB12060028FCB3AC00B1825D /* Assets.xcassets */,
+				CB12060E28FCBB2800B1825D /* QuizListWidgetExtension.entitlements */,
+				CB12060228FCB3AC00B1825D /* Info.plist */,
+			);
+			path = QuizListWidget;
+			sourceTree = "<group>";
+		};
+		CB567D4B28FC655C0016909B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB567D4C28FC655C0016909B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		CB64C22722ADAC40002B565F = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +224,8 @@
 				CB64C24722ADAC42002B565F /* QuizListTests */,
 				CB9B5C5B22AFCC5400C63B67 /* QuizList Watch */,
 				CB9B5C6A22AFCC5500C63B67 /* QuizList Watch Extension */,
+				CB1205FC28FCB3AB00B1825D /* QuizListWidget */,
+				CB1205F728FCB3AB00B1825D /* Frameworks */,
 				CB64C23122ADAC40002B565F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,7 +236,7 @@
 				CB64C23022ADAC40002B565F /* QuizList.app */,
 				CB64C24422ADAC42002B565F /* QuizListTests.xctest */,
 				CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */,
-				CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */,
+				CB1205F628FCB3AB00B1825D /* QuizListWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,18 +244,29 @@
 		CB64C23222ADAC40002B565F /* QuizList */ = {
 			isa = PBXGroup;
 			children = (
+				CB12060C28FCBAE100B1825D /* QuizList.entitlements */,
 				CB64C23322ADAC40002B565F /* AppDelegate.swift */,
-				CB64C23522ADAC40002B565F /* ViewController.swift */,
-				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
-				CB4F8D5A22AF84EB0086FD75 /* ListOrderTableViewController.swift */,
+				CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
-				CB1BF4D422B1997D0052D058 /* WriteController.swift */,
+				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
+				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
+				CB139D4C28C5DDB600D968B8 /* SettingsView.swift */,
+				CB735C4B292E9FF600517085 /* Compression.swift */,
+				CBE854CF289FB4F6009B480C /* WinningView.swift */,
+				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
+				CB6E7DFC24FC371C007B03CF /* WriteView.swift */,
+				CBEB121426A8D4E200294202 /* HelpView.swift */,
 				CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */,
+				CB567D4528FC2A6D0016909B /* FileManager+Utilities.swift */,
+				CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */,
 				CB64C23722ADAC40002B565F /* Main.storyboard */,
 				CB64C23A22ADAC41002B565F /* Assets.xcassets */,
 				CB64C23C22ADAC41002B565F /* LaunchScreen.storyboard */,
 				CB64C23F22ADAC41002B565F /* Info.plist */,
+				CB139D4A28C554BB00D968B8 /* Data.quizlist */,
 				CB4F8D5C22AF9B7D0086FD75 /* QuizList.json */,
+				CB9D2A1428FC8611002B39C6 /* sample.xcappdata */,
+				CB567D4B28FC655C0016909B /* Preview Content */,
 			);
 			path = QuizList;
 			sourceTree = "<group>";
@@ -182,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				CB64C24822ADAC42002B565F /* QuizListTests.swift */,
-				CB4F8D5622AF0BB90086FD75 /* VCTests.swift */,
+				CB139D4828C5545F00D968B8 /* BundleReaderTests.swift */,
 				CB64C24A22ADAC42002B565F /* Info.plist */,
 			);
 			path = QuizListTests;
@@ -191,7 +284,7 @@
 		CB9B5C5B22AFCC5400C63B67 /* QuizList Watch */ = {
 			isa = PBXGroup;
 			children = (
-				CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */,
+				CB12060D28FCBB1000B1825D /* QuizList Watch.entitlements */,
 				CB9B5C5F22AFCC5400C63B67 /* Assets.xcassets */,
 				CB9B5C6122AFCC5400C63B67 /* Info.plist */,
 			);
@@ -201,9 +294,9 @@
 		CB9B5C6A22AFCC5500C63B67 /* QuizList Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CB9B5C6B22AFCC5500C63B67 /* InterfaceController.swift */,
-				CB9B5C7D22AFD27D00C63B67 /* QuizRowType.swift */,
-				CB9B5C6D22AFCC5500C63B67 /* ExtensionDelegate.swift */,
+				CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */,
+				CBD4D3D5292E8113002CF04C /* WatchConnectionDelegate.swift */,
+				CB97F9B626A9AA7A00A964E6 /* WatchView.swift */,
 				CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */,
 				CB9B5C7122AFCC5500C63B67 /* Info.plist */,
 			);
@@ -213,6 +306,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CB1205F528FCB3AB00B1825D /* QuizListWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB12060B28FCB3AD00B1825D /* Build configuration list for PBXNativeTarget "QuizListWidgetExtension" */;
+			buildPhases = (
+				CB1205F228FCB3AB00B1825D /* Sources */,
+				CB1205F328FCB3AB00B1825D /* Frameworks */,
+				CB1205F428FCB3AB00B1825D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuizListWidgetExtension;
+			productName = QuizListWidgetExtension;
+			productReference = CB1205F628FCB3AB00B1825D /* QuizListWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CB64C22F22ADAC40002B565F /* QuizList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB64C24D22ADAC42002B565F /* Build configuration list for PBXNativeTarget "QuizList" */;
@@ -221,11 +331,13 @@
 				CB64C22D22ADAC40002B565F /* Frameworks */,
 				CB64C22E22ADAC40002B565F /* Resources */,
 				CB9B5C7C22AFCC5500C63B67 /* Embed Watch Content */,
+				CB12060828FCB3AD00B1825D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CB9B5C7322AFCC5500C63B67 /* PBXTargetDependency */,
+				CB12060628FCB3AC00B1825D /* PBXTargetDependency */,
 			);
 			name = QuizList;
 			productName = QuizList;
@@ -255,34 +367,17 @@
 			buildConfigurationList = CB9B5C7B22AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch" */;
 			buildPhases = (
 				CB9B5C5822AFCC5300C63B67 /* Resources */,
-				CB9B5C7A22AFCC5500C63B67 /* Embed App Extensions */,
+				CB9B5C6222AFCC5500C63B67 /* Sources */,
+				CB9B5C6322AFCC5500C63B67 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB9B5C6922AFCC5500C63B67 /* PBXTargetDependency */,
 			);
 			name = "QuizList Watch";
 			productName = "QuizList Watch";
 			productReference = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB9B5C7922AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch Extension" */;
-			buildPhases = (
-				CB9B5C6222AFCC5500C63B67 /* Sources */,
-				CB9B5C6322AFCC5500C63B67 /* Frameworks */,
-				CB9B5C6422AFCC5500C63B67 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuizList Watch Extension";
-			productName = "QuizList Watch Extension";
-			productReference = CB9B5C6622AFCC5500C63B67 /* QuizList Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -290,10 +385,13 @@
 		CB64C22822ADAC40002B565F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = None;
 				TargetAttributes = {
+					CB1205F528FCB3AB00B1825D = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					CB64C22F22ADAC40002B565F = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -302,9 +400,6 @@
 						TestTargetID = CB64C22F22ADAC40002B565F;
 					};
 					CB9B5C5922AFCC5300C63B67 = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
-					CB9B5C6522AFCC5500C63B67 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -325,12 +420,21 @@
 				CB64C22F22ADAC40002B565F /* QuizList */,
 				CB64C24322ADAC42002B565F /* QuizListTests */,
 				CB9B5C5922AFCC5300C63B67 /* QuizList Watch */,
-				CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */,
+				CB1205F528FCB3AB00B1825D /* QuizListWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CB1205F428FCB3AB00B1825D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4FA0B828FD7F65007A224D /* Preview Assets.xcassets in Resources */,
+				CB12060128FCB3AC00B1825D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB64C22E22ADAC40002B565F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +443,8 @@
 				CB64C23B22ADAC41002B565F /* Assets.xcassets in Resources */,
 				CB4F8D5D22AF9B7D0086FD75 /* QuizList.json in Resources */,
 				CB64C23922ADAC40002B565F /* Main.storyboard in Resources */,
+				CB567D4D28FC655C0016909B /* Preview Assets.xcassets in Resources */,
+				CB139D4B28C554BB00D968B8 /* Data.quizlist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB567D4428FAAAA70016909B /* Data.quizlist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,14 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9B5C6022AFCC5400C63B67 /* Assets.xcassets in Resources */,
-				CB9B5C5E22AFCC5400C63B67 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9B5C6422AFCC5500C63B67 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				CB6D719D22B04168004D7402 /* QuizList.json in Resources */,
 				CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */,
 			);
@@ -370,15 +469,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CB1205F228FCB3AB00B1825D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1205FE28FCB3AB00B1825D /* QuizListWidget.swift in Sources */,
+				CB12060328FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */,
+				CB4FA0B628FD689E007A224D /* QuizList.swift in Sources */,
+				CB82DA6128FD472D006FCF68 /* SharedIdentifiers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB64C22C22ADAC40002B565F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1BF4D522B1997D0052D058 /* WriteController.swift in Sources */,
-				CB4F8D5B22AF84EB0086FD75 /* ListOrderTableViewController.swift in Sources */,
+				CB735C4C292E9FF600517085 /* Compression.swift in Sources */,
+				CB6E7DFD24FC371C007B03CF /* WriteView.swift in Sources */,
+				CB87B76C24F717A2004BA9F9 /* ListView.swift in Sources */,
+				CB567D4628FC2A6D0016909B /* FileManager+Utilities.swift in Sources */,
+				CBEB121526A8D4E200294202 /* HelpView.swift in Sources */,
+				CB87B76824F68E52004BA9F9 /* QuestionView.swift in Sources */,
 				CB76C73022AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
-				CB64C23622ADAC40002B565F /* ViewController.swift in Sources */,
+				CB82DA5F28FD472D006FCF68 /* SharedIdentifiers.swift in Sources */,
+				CB139D4D28C5DDB600D968B8 /* SettingsView.swift in Sources */,
+				CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */,
 				CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */,
+				CBD4D3D3292E4A75002CF04C /* PhoneConnectionDelegate.swift in Sources */,
+				CB12060428FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */,
 				CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */,
 				CB64C25422ADAC55002B565F /* QuizList.swift in Sources */,
 			);
@@ -388,8 +506,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4F8D5722AF0BB90086FD75 /* VCTests.swift in Sources */,
+				CB139D4928C5545F00D968B8 /* BundleReaderTests.swift in Sources */,
 				CB64C24922ADAC42002B565F /* QuizListTests.swift in Sources */,
+				CB4FA0B728FD6CC5007A224D /* SharedIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,26 +516,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB9B5C6E22AFCC5500C63B67 /* ExtensionDelegate.swift in Sources */,
-				CB9B5C6C22AFCC5500C63B67 /* InterfaceController.swift in Sources */,
+				CB735C4D292E9FF600517085 /* Compression.swift in Sources */,
+				CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */,
+				CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */,
+				CB82DA6028FD472D006FCF68 /* SharedIdentifiers.swift in Sources */,
 				CB76C73122AFFEFD003192C0 /* QuestionManufactory.swift in Sources */,
+				CB8B555E28C7EB2D00FF026E /* WinningView.swift in Sources */,
+				CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */,
+				CBB4C129292E84BF00C9BC0D /* WatchConnectionDelegate.swift in Sources */,
 				CB196A3222AFF93600D2E97A /* QuizList.swift in Sources */,
-				CB9B5C7E22AFD27D00C63B67 /* QuizRowType.swift in Sources */,
+				CB56F9F426A9BD2B00030554 /* QuestionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB12060628FCB3AC00B1825D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1205F528FCB3AB00B1825D /* QuizListWidgetExtension */;
+			targetProxy = CB12060528FCB3AC00B1825D /* PBXContainerItemProxy */;
+		};
 		CB64C24622ADAC42002B565F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB64C22F22ADAC40002B565F /* QuizList */;
 			targetProxy = CB64C24522ADAC42002B565F /* PBXContainerItemProxy */;
-		};
-		CB9B5C6922AFCC5500C63B67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB9B5C6522AFCC5500C63B67 /* QuizList Watch Extension */;
-			targetProxy = CB9B5C6822AFCC5500C63B67 /* PBXContainerItemProxy */;
 		};
 		CB9B5C7322AFCC5500C63B67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -442,17 +566,71 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		CB9B5C5C22AFCC5400C63B67 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB9B5C5D22AFCC5400C63B67 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CB12060928FCB3AD00B1825D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = QuizListWidget/QuizListWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "QuizList/Preview\\ Content/Preview\\ Assets.xcassets";
+				DEVELOPMENT_TEAM = M3DTZN9V9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuizListWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuizListWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 None. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.QuizListWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB12060A28FCB3AD00B1825D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = QuizListWidget/QuizListWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "QuizList/Preview\\ Content/Preview\\ Assets.xcassets";
+				DEVELOPMENT_TEAM = M3DTZN9V9B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuizListWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuizListWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 None. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.QuizListWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CB64C24B22ADAC42002B565F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,6 +657,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -504,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -540,6 +719,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -559,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -572,7 +752,9 @@
 		CB64C24E22ADAC42002B565F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QuizList/QuizList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
 				INFOPLIST_FILE = QuizList/Info.plist;
@@ -590,7 +772,9 @@
 		CB64C24F22ADAC42002B565F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QuizList/QuizList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
 				INFOPLIST_FILE = QuizList/Info.plist;
@@ -650,17 +834,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "QuizList Watch/QuizList Watch.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "QuizList/Preview\\ Content/Preview\\ Assets.xcassets QuizList/Preview\\ Content";
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				IBSC_MODULE = QuizList_Watch_Extension;
 				INFOPLIST_FILE = "QuizList Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -669,67 +859,38 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "QuizList Watch/QuizList Watch.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "QuizList/Preview\\ Content/Preview\\ Assets.xcassets QuizList/Preview\\ Content";
 				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				IBSC_MODULE = QuizList_Watch_Extension;
 				INFOPLIST_FILE = "QuizList Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
-		CB9B5C7722AFCC5500C63B67 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				INFOPLIST_FILE = "QuizList Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Debug;
-		};
-		CB9B5C7822AFCC5500C63B67 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3DTZN9V9B;
-				INFOPLIST_FILE = "QuizList Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vonbelow.QuizList.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CB12060B28FCB3AD00B1825D /* Build configuration list for PBXNativeTarget "QuizListWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB12060928FCB3AD00B1825D /* Debug */,
+				CB12060A28FCB3AD00B1825D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CB64C22B22ADAC40002B565F /* Build configuration list for PBXProject "QuizList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -753,15 +914,6 @@
 			buildConfigurations = (
 				CB64C25122ADAC42002B565F /* Debug */,
 				CB64C25222ADAC42002B565F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB9B5C7922AFCC5500C63B67 /* Build configuration list for PBXNativeTarget "QuizList Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB9B5C7722AFCC5500C63B67 /* Debug */,
-				CB9B5C7822AFCC5500C63B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

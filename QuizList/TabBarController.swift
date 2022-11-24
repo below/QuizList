@@ -12,26 +12,69 @@ protocol ListController {
     var list: QuizList! { get set }
 }
 
-class TabBarController: UITabBarController, ListController {
+extension UserDefaults {
+    @objc dynamic var CurrentList: String? {
+        return string(forKey: "CurrentList")
+    }
+}
 
-    var list: QuizList!
+class TabBarController: UITabBarController, ListController {
     
+    var list: QuizList!
+    var observer: NSKeyValueObservation?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            if let url = Bundle.main.url(forResource: "QuizList", withExtension: "json") {
-                
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                list = try decoder.decode(QuizList.self, from: data)
+        let settingsView = SettingsViewHostingController(
+            rootView: SettingsView())
+        settingsView.tabBarItem = UITabBarItem(
+            title: NSLocalizedString("Settings", comment: ""),
+            image: UIImage.init(systemName: "gear"),
+            selectedImage: nil)
+        self.viewControllers?.append(settingsView)
+        
+        observer = UserDefaults.standard.observe(\.CurrentList) { defaults, value in
+            print ("KVO: Value change \(value)")
+            print ("Defaults changed: \(defaults.CurrentList ?? "<NIL>")")
+            self.list = self.quizBundle()
+            
+            self.updateViewControllers()
+        }
+        
+        list = quizBundle()
+
+        updateViewControllers()
+    }
+    
+    func quizBundle() -> QuizList {
+        var list: QuizList?
+        
+        if let bundleName = UserDefaults().object(forKey: "CurrentList") as? String {
+            let url = FileManager.default.documentsDirURL.appendingPathComponent(bundleName)
+            if  let dataBundle = Bundle(url: url) {
+                list = QuizList(contentsOf: dataBundle)
             }
         }
-        catch {
-        }
+        
         if list == nil {
-            list = QuizList()
+            if let defaultDataURL: URL = Bundle.main.url(
+                forResource: "Data",
+                withExtension: Constants.FileExtenstion.rawValue),
+               let dataBundle = Bundle(url: defaultDataURL)
+            {
+                list = QuizList(contentsOf: dataBundle)
+            } else {
+                list = QuizList()
+            }
         }
+        guard let list = list else {
+            fatalError("Unable to create a QuizList")
+        }
+        return list
+    }
+    
+    func updateViewControllers() {
         
         if let array: [UIViewController] = self.viewControllers {
             for vc in array  {
@@ -46,5 +89,7 @@ class TabBarController: UITabBarController, ListController {
         }
     }
     
-
+    deinit {
+        observer?.invalidate()
+    }
 }
