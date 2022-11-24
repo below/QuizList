@@ -25,9 +25,12 @@ struct WinningView: View {
                     .foregroundColor(.green)
                     .aspectRatio(contentMode: .fit)
             }
+            #if os(watchOS)
+            #else
             Button("Thank You!") {
                 dismiss()
             }
+            #endif
         }
     }
 }
