@@ -12,6 +12,8 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+#if os(watchOS)
+#else
 // This seems to be necessary
 extension UIImage {
   func resized(toWidth width: CGFloat, isOpaque: Bool = true) -> UIImage? {
@@ -23,8 +25,13 @@ extension UIImage {
     }
   }
 }
+#endif
 
 struct Provider: IntentTimelineProvider {
+    func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
+        return [IntentRecommendation<ConfigurationIntent>]()
+    }
+    
     func placeholder(in context: Context) -> QuizEntry {
         QuizEntry(
             date: Date(),
@@ -60,7 +67,12 @@ struct Provider: IntentTimelineProvider {
                     
                     imagePaths = Array(imagePaths.prefix(upTo: 8))
                     
-                    let imageList = imagePaths.compactMap {
+                    let imageList: Array<UIImage>?
+#if os(watchOS)
+                    // No images on watchOS
+                    imageList = nil
+#else
+                    imageList = imagePaths.compactMap {
                         do {
                             let data = try Data(contentsOf: $0)
                             let image = UIImage(data: data)
@@ -69,9 +81,10 @@ struct Provider: IntentTimelineProvider {
                             return nil
                         }
                     }
-                    
+#endif
+
                     for item in list.items.shuffled() {
-                        let image = imageList.randomElement()!
+                        let image = imageList?.randomElement()
                         let entry = QuizEntry(
                             date: date,
                             configuration: configuration,
@@ -100,7 +113,7 @@ struct QuizEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     let heading: String
-    let image: UIImage
+    let image: UIImage?
     let text: String
 }
 
@@ -122,12 +135,13 @@ struct QuizListWidgetEntryView : View {
                         .padding()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
-                
-                Image(uiImage: entry.image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .clipped()
+                if let image = entry.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .clipped()
+                }
             }
 
         case .accessoryRectangular:
@@ -138,11 +152,18 @@ struct QuizListWidgetEntryView : View {
         case .accessoryInline:
             Text("\(entry.heading) \(entry.text)")
         default:
-            Image(uiImage: entry.image)
-                .resizable()
-                .scaledToFit()
-                .bold()
-                .foregroundColor(.black)
+            if let image = entry.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .bold()
+                    .foregroundColor(.black)
+            } else {
+                VStack {
+                    Text (entry.heading)
+                    Text (entry.text)
+                }
+            }
             
         }
     }
@@ -156,22 +177,33 @@ struct QuizListWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             QuizListWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("QuizList Widget")
+        .description("A Widget for QuizLists")
+        #if os(watchOS)
+        .supportedFamilies([
+            .accessoryInline,
+            .accessoryRectangular,
+            ])
+        #else
         .supportedFamilies([
             .accessoryInline,
             .accessoryRectangular,
             .systemSmall,
             .systemMedium,
             .systemLarge,
-            .systemExtraLarge]
-        )
+            .systemExtraLarge
+            ])
+       #endif
     }
 }
 
 struct QuizListWidget_Previews: PreviewProvider {
     static var previews: some View {
-        let uiImage = UIImage(named: "MysterySoda")!.resized(toWidth: 200)!
+#if os(watchOS)
+        let uiImage: UIImage? = nil
+#else
+        let uiImage = UIImage(named: "MysterySoda")!.resized(toWidth: 200)
+#endif
         QuizListWidgetEntryView(
             entry: QuizEntry(
                 date: Date(),
@@ -180,6 +212,10 @@ struct QuizListWidget_Previews: PreviewProvider {
                 image: uiImage,
                 text: "Number one"
             ))
+        #if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+        #else
             .previewContext(WidgetPreviewContext(family: .systemLarge))
+        #endif
     }
 }
