@@ -60,7 +60,10 @@ struct Provider: IntentTimelineProvider {
         
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         
-        let list: QuizList = QuizList()
+        var list: QuizList = QuizList()
+        if let sharedList = try? QuizList(firstAt: ContainerURL()) {
+            list = sharedList
+        }
         
         var date = Date()
         let imageList: Array<UIImage>?
