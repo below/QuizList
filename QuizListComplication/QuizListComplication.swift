@@ -65,15 +65,16 @@ struct Provider: IntentTimelineProvider {
                     firstAt: ContainerURL()) {
                     
                     var date = Date()
-                    var imagePaths = list.imagePaths
-                    
-                    imagePaths = Array(imagePaths.prefix(upTo: 8))
                     
                     let imageList: Array<UIImage>?
+
 #if os(watchOS)
                     // No images on watchOS
                     imageList = nil
 #else
+                    var imagePaths = list.imagePaths
+                    imagePaths = Array(imagePaths.prefix(upTo: 8))
+                    
                     imageList = imagePaths.compactMap {
                         do {
                             let data = try Data(contentsOf: $0)
