@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CB1205F928FCB3AB00B1825D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205F828FCB3AB00B1825D /* WidgetKit.framework */; };
 		CB1205FB28FCB3AB00B1825D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205FA28FCB3AB00B1825D /* SwiftUI.framework */; };
-		CB1205FE28FCB3AB00B1825D /* QuizListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FD28FCB3AB00B1825D /* QuizListWidget.swift */; };
 		CB12060128FCB3AC00B1825D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB12060028FCB3AC00B1825D /* Assets.xcassets */; };
 		CB12060328FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */; };
 		CB12060428FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FF28FCB3AB00B1825D /* QuizListWidget.intentdefinition */; };
@@ -47,13 +46,14 @@
 		CB8B555E28C7EB2D00FF026E /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
 		CB8CA2282932C9B1004B75EC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205F828FCB3AB00B1825D /* WidgetKit.framework */; };
 		CB8CA2292932C9B1004B75EC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1205FA28FCB3AB00B1825D /* SwiftUI.framework */; };
-		CB8CA22C2932C9B2004B75EC /* QuizListComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA22B2932C9B2004B75EC /* QuizListComplication.swift */; };
 		CB8CA22F2932C9B3004B75EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8CA22E2932C9B3004B75EC /* Assets.xcassets */; };
 		CB8CA2312932C9B3004B75EC /* QuizListComplication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA22D2932C9B2004B75EC /* QuizListComplication.intentdefinition */; };
 		CB8CA2322932C9B3004B75EC /* QuizListComplication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA22D2932C9B2004B75EC /* QuizListComplication.intentdefinition */; };
 		CB8CA2352932C9B3004B75EC /* QuizListComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CB8CA2272932C9B1004B75EC /* QuizListComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB8CA23A2932C9CA004B75EC /* QuizList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64C25322ADAC55002B565F /* QuizList.swift */; };
 		CB8CA23B2932C9D7004B75EC /* SharedIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */; };
+		CB93DC0629335EFD001F6D4F /* QuizListWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1205FD28FCB3AB00B1825D /* QuizListWidget.swift */; };
+		CB93DC0829336015001F6D4F /* QuizListComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA22B2932C9B2004B75EC /* QuizListComplication.swift */; };
 		CB97F9B726A9AA7A00A964E6 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B626A9AA7A00A964E6 /* WatchView.swift */; };
 		CB97F9B826A9AB6000A964E6 /* QuizListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97F9B426A9A8A400A964E6 /* QuizListApp.swift */; };
 		CB97F9B926A9BA7A00A964E6 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
@@ -558,7 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1205FE28FCB3AB00B1825D /* QuizListWidget.swift in Sources */,
+				CB93DC0629335EFD001F6D4F /* QuizListWidget.swift in Sources */,
 				CB12060328FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */,
 				CB4FA0B628FD689E007A224D /* QuizList.swift in Sources */,
 				CB82DA6128FD472D006FCF68 /* SharedIdentifiers.swift in Sources */,
@@ -601,7 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB8CA22C2932C9B2004B75EC /* QuizListComplication.swift in Sources */,
+				CB93DC0829336015001F6D4F /* QuizListComplication.swift in Sources */,
 				CB8CA2312932C9B3004B75EC /* QuizListComplication.intentdefinition in Sources */,
 				CB8CA23A2932C9CA004B75EC /* QuizList.swift in Sources */,
 				CB8CA23B2932C9D7004B75EC /* SharedIdentifiers.swift in Sources */,

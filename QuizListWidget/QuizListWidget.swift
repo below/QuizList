@@ -33,7 +33,7 @@ struct Provider: IntentTimelineProvider {
             IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
         ]
     }
-    
+
     func placeholder(in context: Context) -> QuizEntry {
         QuizEntry(
             date: Date(),

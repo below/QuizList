@@ -1,8 +1,8 @@
 //
-//  QuizListComplication.swift
-//  QuizListComplication
+//  QuizListWidget.swift
+//  QuizListWidget
 //
-//  Created by Alexander von Below on 26.11.22.
+//  Created by Alexander von Below on 16.10.22.
 //  Copyright © 2022 None. All rights reserved.
 //
 // Mystery Soda! Image by Toby Oxborrow, CCbySA
@@ -33,7 +33,7 @@ struct Provider: IntentTimelineProvider {
             IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
         ]
     }
-
+    
     func placeholder(in context: Context) -> QuizEntry {
         QuizEntry(
             date: Date(),
@@ -41,9 +41,9 @@ struct Provider: IntentTimelineProvider {
             heading: "#1",
             image: UIImage(named: "MysterySoda"),
             text: "sample"
-            )
+        )
     }
-
+    
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuizEntry) -> ()) {
         let entry = QuizEntry(
             date: Date(),
@@ -54,59 +54,51 @@ struct Provider: IntentTimelineProvider {
         )
         completion(entry)
     }
-
+    
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [QuizEntry] = []
-
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         
-            do {
-                if let list = try QuizList(
-                    firstAt: ContainerURL()) {
-                    
-                    var date = Date()
-                    
-                    let imageList: Array<UIImage>?
-
+        let list: QuizList = QuizList()
+        
+        var date = Date()
+        let imageList: Array<UIImage>?
 #if os(watchOS)
-                    // No images on watchOS
-                    imageList = nil
+        // No images on watchOS
+        imageList = nil
 #else
-                    var imagePaths = list.imagePaths
-                    imagePaths = Array(imagePaths.prefix(upTo: 8))
-                    
-                    imageList = imagePaths.compactMap {
-                        do {
-                            let data = try Data(contentsOf: $0)
-                            let image = UIImage(data: data)
-                            return image?.resized(toWidth: 500)
-                        } catch {
-                            return nil
-                        }
-                    }
+        var imagePaths = list.imagePaths
+        // TODO: This needs fixing for other Content
+        imagePaths = Array(imagePaths.prefix(upTo: 8))
+        
+        imageList = imagePaths.compactMap {
+            do {
+                let data = try Data(contentsOf: $0)
+                let image = UIImage(data: data)
+                return image?.resized(toWidth: 500)
+            } catch {
+                return nil
+            }
+        }
 #endif
-
-                    for item in list.items.shuffled() {
-                        let image = imageList?.randomElement()
-                        let entry = QuizEntry(
-                            date: date,
-                            configuration: configuration,
-                            heading: "#\(item.number)",
-                            image: image,
-                            text: item.text)
-                        entries.append(entry)
-                        date = Calendar.current.date(
-                            byAdding: .minute,
-                            value: 5,
-                            to: date)!
-
-                    }
-                }
-            }
-            catch {
-                print ("We got an error:\(error)")
-            }
-
+        
+        for item in list.items.shuffled() {
+            let image = imageList?.randomElement()
+            let entry = QuizEntry(
+                date: date,
+                configuration: configuration,
+                heading: "#\(item.number)",
+                image: image,
+                text: item.text)
+            entries.append(entry)
+            date = Calendar.current.date(
+                byAdding: .minute,
+                value: 5,
+                to: date)!
+            
+        }
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -199,7 +191,7 @@ struct QuizListWidget: Widget {
     }
 }
 
-struct QuizListComplication_Previews: PreviewProvider {
+struct QuizListWidget_Previews: PreviewProvider {
     static var previews: some View {
 #if os(watchOS)
         let uiImage: UIImage? = nil
