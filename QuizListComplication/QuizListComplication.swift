@@ -59,17 +59,52 @@ struct Provider: IntentTimelineProvider {
         var entries: [QuizEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = QuizEntry(
-                date: entryDate,
-                configuration: configuration,
-                heading: "Heading",
-                image: nil,
-                text: "Text")
-            entries.append(entry)
-        }
+        
+            do {
+                if let list = try QuizList(
+                    firstAt: ContainerURL()) {
+                    
+                    var date = Date()
+                    var imagePaths = list.imagePaths
+                    
+                    imagePaths = Array(imagePaths.prefix(upTo: 8))
+                    
+                    let imageList: Array<UIImage>?
+#if os(watchOS)
+                    // No images on watchOS
+                    imageList = nil
+#else
+                    imageList = imagePaths.compactMap {
+                        do {
+                            let data = try Data(contentsOf: $0)
+                            let image = UIImage(data: data)
+                            return image?.resized(toWidth: 500)
+                        } catch {
+                            return nil
+                        }
+                    }
+#endif
+
+                    for item in list.items.shuffled() {
+                        let image = imageList?.randomElement()
+                        let entry = QuizEntry(
+                            date: date,
+                            configuration: configuration,
+                            heading: "#\(item.number)",
+                            image: image,
+                            text: item.text)
+                        entries.append(entry)
+                        date = Calendar.current.date(
+                            byAdding: .minute,
+                            value: 5,
+                            to: date)!
+
+                    }
+                }
+            }
+            catch {
+                print ("We got an error:\(error)")
+            }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
@@ -143,8 +178,23 @@ struct QuizListWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             QuizListWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("QuizList Widget")
+        .description("A Widget for QuizLists")
+        #if os(watchOS)
+        .supportedFamilies([
+            .accessoryInline,
+            .accessoryRectangular,
+            ])
+        #else
+        .supportedFamilies([
+            .accessoryInline,
+            .accessoryRectangular,
+            .systemSmall,
+            .systemMedium,
+            .systemLarge,
+            .systemExtraLarge
+            ])
+       #endif
     }
 }
 
