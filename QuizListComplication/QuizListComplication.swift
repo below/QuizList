@@ -5,63 +5,109 @@
 //  Created by Alexander von Below on 26.11.22.
 //  Copyright © 2022 None. All rights reserved.
 //
+// Mystery Soda! Image by Toby Oxborrow, CCbySA
+// https://flic.kr/p/5rRy6t
 
 import WidgetKit
 import SwiftUI
 import Intents
 
+#if os(watchOS)
+#else
+// This seems to be necessary
+extension UIImage {
+  func resized(toWidth width: CGFloat, isOpaque: Bool = true) -> UIImage? {
+    let canvas = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+    let format = imageRendererFormat
+    format.opaque = isOpaque
+    return UIGraphicsImageRenderer(size: canvas, format: format).image {
+      _ in draw(in: CGRect(origin: .zero, size: canvas))
+    }
+  }
+}
+#endif
+
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+    func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
+        return [
+            IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
+        ]
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func placeholder(in context: Context) -> QuizEntry {
+        QuizEntry(
+            date: Date(),
+            configuration: ConfigurationIntent(),
+            heading: "#1",
+            image: nil,
+            text: "sample")
+    }
+
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuizEntry) -> ()) {
+        let entry =  QuizEntry(
+            date: Date(),
+            configuration: configuration,
+            heading: "#1",
+            image: nil,
+            text: "Sample")
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
+        var entries: [QuizEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = QuizEntry(
+                date: entryDate,
+                configuration: configuration,
+                heading: "Heading",
+                image: nil,
+                text: "Text")
             entries.append(entry)
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
-
-    func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
-        return [
-            IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
-        ]
-    }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct QuizEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    let heading: String
+    let image: UIImage?
+    let text: String
 }
 
-struct QuizListComplicationEntryView : View {
+struct QuizListWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        if let image = entry.image {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .bold()
+                .foregroundColor(.black)
+        } else {
+            VStack {
+                Text (entry.heading)
+                Text (entry.text)
+            }
+        }
     }
 }
 
 @main
-struct QuizListComplication: Widget {
-    let kind: String = "QuizListComplication"
+struct QuizListWidget: Widget {
+    let kind: String = "QuizListWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            QuizListComplicationEntryView(entry: entry)
+            QuizListWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
@@ -70,7 +116,23 @@ struct QuizListComplication: Widget {
 
 struct QuizListComplication_Previews: PreviewProvider {
     static var previews: some View {
-        QuizListComplicationEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+#if os(watchOS)
+        let uiImage: UIImage? = nil
+#else
+        let uiImage = UIImage(named: "MysterySoda")!.resized(toWidth: 200)
+#endif
+        QuizListWidgetEntryView(
+            entry: QuizEntry(
+                date: Date(),
+                configuration: ConfigurationIntent(),
+                heading: "#1",
+                image: uiImage,
+                text: "Number one"
+            ))
+        #if os(watchOS)
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+        #else
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+        #endif
     }
 }
