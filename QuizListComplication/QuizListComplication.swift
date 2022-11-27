@@ -39,8 +39,9 @@ struct Provider: IntentTimelineProvider {
             date: Date(),
             configuration: ConfigurationIntent(),
             heading: "#1",
-            image: nil,
-            text: "sample")
+            image: UIImage(named: "MysterySoda"),
+            text: "sample"
+            )
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuizEntry) -> ()) {

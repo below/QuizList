@@ -39,7 +39,7 @@ struct Provider: IntentTimelineProvider {
             date: Date(),
             configuration: ConfigurationIntent(),
             heading: "#1",
-            image: UIImage(named: "MysterySoda")!,
+            image: UIImage(named: "MysterySoda"),
             text: "sample"
             )
     }
