@@ -29,7 +29,9 @@ extension UIImage {
 
 struct Provider: IntentTimelineProvider {
     func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
-        return [IntentRecommendation<ConfigurationIntent>]()
+        return [
+            IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
+        ]
     }
     
     func placeholder(in context: Context) -> QuizEntry {
