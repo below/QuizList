@@ -49,7 +49,7 @@ struct Provider: IntentTimelineProvider {
             date: Date(),
             configuration: configuration,
             heading: "#1",
-            image: UIImage(named: "MysterySoda")!,
+            image: UIImage(named: "MysterySoda"),
             text: "sample"
         )
         completion(entry)
@@ -166,7 +166,6 @@ struct QuizListWidgetEntryView : View {
                     Text (entry.text)
                 }
             }
-            
         }
     }
 }

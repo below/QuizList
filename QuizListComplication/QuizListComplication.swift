@@ -45,12 +45,13 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuizEntry) -> ()) {
-        let entry =  QuizEntry(
+        let entry = QuizEntry(
             date: Date(),
             configuration: configuration,
             heading: "#1",
-            image: nil,
-            text: "Sample")
+            image: UIImage(named: "MysterySoda"),
+            text: "sample"
+        )
         completion(entry)
     }
 
@@ -85,18 +86,50 @@ struct QuizEntry: TimelineEntry {
 
 struct QuizListWidgetEntryView : View {
     var entry: Provider.Entry
+    
+    @Environment(\.widgetFamily) var family
 
+    @ViewBuilder
     var body: some View {
-        if let image = entry.image {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFit()
-                .bold()
-                .foregroundColor(.black)
-        } else {
+        switch family {
+        case .systemMedium, .systemLarge:
+            HStack (spacing: 0) {
+                VStack {
+                    Text (entry.heading)
+                        .padding()
+                    Spacer(minLength: 0)
+                    Text (entry.text)
+                        .padding()
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                if let image = entry.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .clipped()
+                }
+            }
+
+        case .accessoryRectangular:
             VStack {
                 Text (entry.heading)
                 Text (entry.text)
+            }
+        case .accessoryInline:
+            Text("\(entry.heading) \(entry.text)")
+        default:
+            if let image = entry.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .bold()
+                    .foregroundColor(.black)
+            } else {
+                VStack {
+                    Text (entry.heading)
+                    Text (entry.text)
+                }
             }
         }
     }
