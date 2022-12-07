@@ -29,7 +29,11 @@ extension UIImage {
 
 struct Provider: IntentTimelineProvider {
     func recommendations() -> [IntentRecommendation<ConfigurationIntent>] {
-        return [IntentRecommendation<ConfigurationIntent>]()
+        return [
+            IntentRecommendation(intent: ConfigurationIntent(), description: "My Intent Widget")
+        ]
+//         return [IntentRecommendation<ConfigurationIntent>]()
+
     }
     
     func placeholder(in context: Context) -> QuizEntry {
@@ -37,73 +41,69 @@ struct Provider: IntentTimelineProvider {
             date: Date(),
             configuration: ConfigurationIntent(),
             heading: "#1",
-            image: UIImage(named: "MysterySoda")!,
+            image: UIImage(named: "MysterySoda"),
             text: "sample"
-            )
+        )
     }
-
+    
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (QuizEntry) -> ()) {
         let entry = QuizEntry(
             date: Date(),
             configuration: configuration,
             heading: "#1",
-            image: UIImage(named: "MysterySoda")!,
+            image: UIImage(named: "MysterySoda"),
             text: "sample"
         )
         completion(entry)
     }
-
+    
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [QuizEntry] = []
-
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         
-            do {
-                if let list = try QuizList(
-                    firstAt: ContainerURL()) {
-                    
-                    var date = Date()
-                    var imagePaths = list.imagePaths
-                    
-                    imagePaths = Array(imagePaths.prefix(upTo: 8))
-                    
-                    let imageList: Array<UIImage>?
+        var list: QuizList = QuizList()
+        if let sharedList = try? QuizList(firstAt: ContainerURL()) {
+            list = sharedList
+        }
+        
+        var date = Date()
+        let imageList: Array<UIImage>?
 #if os(watchOS)
-                    // No images on watchOS
-                    imageList = nil
+        // No images on watchOS
+        imageList = nil
 #else
-                    imageList = imagePaths.compactMap {
-                        do {
-                            let data = try Data(contentsOf: $0)
-                            let image = UIImage(data: data)
-                            return image?.resized(toWidth: 500)
-                        } catch {
-                            return nil
-                        }
-                    }
+        var imagePaths = list.imagePaths
+        // TODO: This needs fixing for other Content
+        imagePaths = Array(imagePaths.prefix(upTo: 8))
+        
+        imageList = imagePaths.compactMap {
+            do {
+                let data = try Data(contentsOf: $0)
+                let image = UIImage(data: data)
+                return image?.resized(toWidth: 500)
+            } catch {
+                return nil
+            }
+        }
 #endif
-
-                    for item in list.items.shuffled() {
-                        let image = imageList?.randomElement()
-                        let entry = QuizEntry(
-                            date: date,
-                            configuration: configuration,
-                            heading: "#\(item.number)",
-                            image: image,
-                            text: item.text)
-                        entries.append(entry)
-                        date = Calendar.current.date(
-                            byAdding: .minute,
-                            value: 5,
-                            to: date)!
-
-                    }
-                }
-            }
-            catch {
-                print ("We got an error:\(error)")
-            }
-
+        
+        for item in list.items.shuffled() {
+            let image = imageList?.randomElement()
+            let entry = QuizEntry(
+                date: date,
+                configuration: configuration,
+                heading: "#\(item.number)",
+                image: image,
+                text: item.text)
+            entries.append(entry)
+            date = Calendar.current.date(
+                byAdding: .minute,
+                value: 5,
+                to: date)!
+            
+        }
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -164,7 +164,6 @@ struct QuizListWidgetEntryView : View {
                     Text (entry.text)
                 }
             }
-            
         }
     }
 }
