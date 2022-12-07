@@ -3,7 +3,7 @@
 //  QuizListTests
 //
 //  Created by Alexander von Below on 04.09.22.
-//  Copyright © 2022 None. All rights reserved.
+//  Copyright © 2022 Alexander v. Below. All rights reserved.
 //
 
 import XCTest

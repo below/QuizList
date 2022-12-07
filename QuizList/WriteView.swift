@@ -3,7 +3,7 @@
 //  QuizList
 //
 //  Created by Alexander v. Below on 30.08.20.
-//  Copyright © 2020 None. All rights reserved.
+//  Copyright © 2020 Alexander v. Below. All rights reserved.
 //
 
 import SwiftUI
