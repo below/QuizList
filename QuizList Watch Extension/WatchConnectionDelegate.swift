@@ -3,7 +3,7 @@
 //  QuizListWidgetExtension
 //
 //  Created by Alexander von Below on 23.11.22.
-//  Copyright © 2022 None. All rights reserved.
+//  Copyright © 2022 Alexander v. Below. All rights reserved.
 //
 
 import WatchConnectivity

@@ -3,7 +3,7 @@
 //  QuizList
 //
 //  Created by Alexander v. Below on 11.06.19.
-//  Copyright © 2019 None. All rights reserved.
+//  Copyright © 2019 Alexander v. Below. All rights reserved.
 //
 
 import UIKit

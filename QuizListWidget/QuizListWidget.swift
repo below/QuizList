@@ -3,7 +3,7 @@
 //  QuizListWidget
 //
 //  Created by Alexander von Below on 16.10.22.
-//  Copyright © 2022 None. All rights reserved.
+//  Copyright © 2022 Alexander v. Below. All rights reserved.
 //
 // Mystery Soda! Image by Toby Oxborrow, CCbySA
 // https://flic.kr/p/5rRy6t
