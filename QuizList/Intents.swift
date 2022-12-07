@@ -15,7 +15,17 @@ struct ListAllItems: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        return .result(value: "A list")
+        // I should put this into a convenience function
+        var list: QuizList = QuizList()
+        if let sharedList = try? QuizList(firstAt: ContainerURL()) {
+            list = sharedList
+        }
+        
+        let resultString = list.items.reduce("") { partialResult, element in
+            partialResult + "\(element.number)" + " " + element.text + "\n"
+        }
+        
+        return .result(value: resultString)
     }
   
     static var openAppWhenRun: Bool = false
