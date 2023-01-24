@@ -61,6 +61,7 @@
 		CB9B5C7022AFCC5500C63B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */; };
 		CB9B5C7422AFCC5500C63B67 /* QuizList Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB9B5C5A22AFCC5300C63B67 /* QuizList Watch.app */; };
 		CBB4C129292E84BF00C9BC0D /* WatchConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4D3D5292E8113002CF04C /* WatchConnectionDelegate.swift */; };
+		CBD10AFC2940FED8004552DC /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD10AFB2940FED8004552DC /* Intents.swift */; };
 		CBD4D3D3292E4A75002CF04C /* PhoneConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */; };
 		CBE854D0289FB4F6009B480C /* WinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE854CF289FB4F6009B480C /* WinningView.swift */; };
 		CBEB121526A8D4E200294202 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEB121426A8D4E200294202 /* HelpView.swift */; };
@@ -177,6 +178,7 @@
 		CB9B5C6F22AFCC5500C63B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9B5C7122AFCC5500C63B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9D2A1428FC8611002B39C6 /* sample.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = sample.xcappdata; path = ../sample.xcappdata; sourceTree = "<group>"; };
+		CBD10AFB2940FED8004552DC /* Intents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
 		CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectionDelegate.swift; sourceTree = "<group>"; };
 		CBD4D3D5292E8113002CF04C /* WatchConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectionDelegate.swift; sourceTree = "<group>"; };
 		CBE854CF289FB4F6009B480C /* WinningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningView.swift; sourceTree = "<group>"; };
@@ -288,14 +290,9 @@
 				CB64C23322ADAC40002B565F /* AppDelegate.swift */,
 				CBD4D3D2292E4A75002CF04C /* PhoneConnectionDelegate.swift */,
 				CB64C25322ADAC55002B565F /* QuizList.swift */,
-				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
-				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
-				CB139D4C28C5DDB600D968B8 /* SettingsView.swift */,
+				CBD10AFB2940FED8004552DC /* Intents.swift */,
+				CBD10AF22940EB2E004552DC /* Views */,
 				CB735C4B292E9FF600517085 /* Compression.swift */,
-				CBE854CF289FB4F6009B480C /* WinningView.swift */,
-				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
-				CB6E7DFC24FC371C007B03CF /* WriteView.swift */,
-				CBEB121426A8D4E200294202 /* HelpView.swift */,
 				CB76C72F22AFFEFD003192C0 /* QuestionManufactory.swift */,
 				CB567D4528FC2A6D0016909B /* FileManager+Utilities.swift */,
 				CB82DA5E28FD472D006FCF68 /* SharedIdentifiers.swift */,
@@ -349,6 +346,20 @@
 				CB9B5C7122AFCC5500C63B67 /* Info.plist */,
 			);
 			path = "QuizList Watch Extension";
+			sourceTree = "<group>";
+		};
+		CBD10AF22940EB2E004552DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F8D5E22AFA1280086FD75 /* TabBarController.swift */,
+				CB87B76724F68E52004BA9F9 /* QuestionView.swift */,
+				CB139D4C28C5DDB600D968B8 /* SettingsView.swift */,
+				CBE854CF289FB4F6009B480C /* WinningView.swift */,
+				CB87B76B24F717A2004BA9F9 /* ListView.swift */,
+				CB6E7DFC24FC371C007B03CF /* WriteView.swift */,
+				CBEB121426A8D4E200294202 /* HelpView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +585,7 @@
 				CB64C23422ADAC40002B565F /* AppDelegate.swift in Sources */,
 				CBD4D3D3292E4A75002CF04C /* PhoneConnectionDelegate.swift in Sources */,
 				CB12060428FCB3AC00B1825D /* QuizListWidget.intentdefinition in Sources */,
+				CBD10AFC2940FED8004552DC /* Intents.swift in Sources */,
 				CB4F8D5F22AFA1280086FD75 /* TabBarController.swift in Sources */,
 				CB64C25422ADAC55002B565F /* QuizList.swift in Sources */,
 			);
