@@ -52,44 +52,39 @@ struct QuestionView: View {
     }
     
     var body: some View {
-        VStack(spacing: 10) {
-            Text("Item # \(list.items[item].number)")
-                .bold()
-                .font(watchOS ? .title3 : .title)
-            Spacer()
-            
-            ForEach(0..<answerSet.answers.count, id: \.self) { i in
-                let answerText = answerSet.answers[i]
-                Button(action: {
-                    // Don't like this …
-                    // The idea is that there may be more than one
-                    // item with the same text
-                    
-                    // Update: There should be only one correct answer
-                    if i == answerSet.correctAnswer || answerText == answerSet.answers[answerSet.correctAnswer] {
-                        quizFactory.appendCorrectAnswer(self.item)
-                        self.nextQuestion()
-                    } else {
-                        self.showCorrectAnswer = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        Form {
+            Section("Item # \(list.items[item].number)") {
+                ForEach(0..<answerSet.answers.count, id: \.self) { i in
+                    let answerText = answerSet.answers[i]
+                    Button(action: {
+                        // Don't like this …
+                        // The idea is that there may be more than one
+                        // item with the same text
+
+                        // Update: There should be only one correct answer
+                        if i == answerSet.correctAnswer || answerText == answerSet.answers[answerSet.correctAnswer] {
+                            quizFactory.appendCorrectAnswer(self.item)
                             self.nextQuestion()
+                        } else {
+                            self.showCorrectAnswer = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                self.nextQuestion()
+                            }
                         }
-                    }
-                }, label: {
-                    let text = Text(answerText)
-                        .font(watchOS ? .caption : .title)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding()
-                    
-                    if showCorrectAnswer, i == answerSet.correctAnswer {
-                        text.foregroundColor(.red)
-                    } else {
-                        text
-                    }
-                }).frame(maxWidth: .infinity)
-                
+                    }, label: {
+                        let text = Text(answerText)
+                            .font(watchOS ? .caption : .title)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding()
+
+                        if showCorrectAnswer, i == answerSet.correctAnswer {
+                            text.foregroundColor(.red)
+                        } else {
+                            text
+                        }
+                    }).frame(maxWidth: .infinity)
+                }
             }
-            Spacer()
         }
         .font(.system(.title))
         .multilineTextAlignment(.center)
