@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct QuestionsSubView: View {
-    var question: String
+    var question: QuizModel
     var answers: [String]
+    var correctAnswer: Int? = nil
+    var action: (Int) -> Void = {_ in }
+    
 #if os(watchOS)
     let watchOS = true
 #else
@@ -18,29 +21,51 @@ struct QuestionsSubView: View {
 #endif
     
     var body: some View {
-        Form {
-            Section(question) {
-                ForEach(answers, id: \.self) { answer in
-                    Button(action: {}, label: {
-                        let text = Text(answer)
-                            .font(watchOS ? .caption : .title)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding()
-                        
+        List {
+            Section () {
+                QuestionDetailView(item: question)
+            }
+            ForEach(0..<answers.count, id: \.self) { i in
+                let answer = answers[i]
+                Button(action: {
+                    action(i)
+                }, label: {
+                    let text = Text(answer)
+                        .font(watchOS ? .caption : .title)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding()
+                    
+                    if let correctAnswer, i == correctAnswer {
+                        text.foregroundColor(.red)
+                            .font(.title.bold())
+                    } else {
                         text
-                    }).frame(maxWidth: .infinity)
-                }
+                    }
+                }).frame(maxWidth: .infinity)
             }
         }
-        .font(.system(.title))
         .multilineTextAlignment(.center)
     }
 }
 
 #Preview {
-    QuestionsSubView(question: "Item #1", answers: [
+    QuestionsSubView(question: QuizModel(text: "Rule of Acquisition 1"),
+        answers: [
         "Once you have their money, you never give it back.",
         "Greed is eternal.",
         "Never place friendship above profit.",
-        "War is good for business."])
+        "War is good for business."]) { answer in
+            print ("Selected Answer \(answer)")
+        }
+}
+
+#Preview {
+    let image = UIImage(named: "The_red_panda_(Ailurus_fulgens)_1")
+
+    QuestionsSubView(question: QuizModel(image: image),
+        answers: [
+        "Panda",
+        "Red Panda",
+        "Fox",
+        "Bear"], correctAnswer: 0)
 }
