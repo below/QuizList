@@ -21,10 +21,10 @@ struct SettingsView: View {
                     Text(NSString(string: $0).deletingPathExtension)
                 }
             }
-                   .onChange(of: selectedList, perform: { newValue in
-                       currentList = newValue
+                   .onChange(of: selectedList) {
+                       currentList = selectedList
                        syncCollectionToSecureStorage()
-                   })
+                   }
                    .padding()
             Button("Reload") {
                 self.reloadLists()
